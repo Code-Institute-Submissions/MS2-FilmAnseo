@@ -16,44 +16,52 @@ let markers = [/*
                 },*/
                 {
                     coords: { lat: 53.052850, lng: -8.400172 },
-                    content: "<h3>Garage</h3><p id='IMDB' style='display:none'>tt0878674</p>",
-                    filmName: "Garage",
-                    filmID: "tt0878674",
-                    trailer: '<div id="youtubeTrailer" style="display:none"><iframe width="560" height="315" src=" https://www.youtube.com/embed/i7YewrLyQoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+                    content: `<h3>Garage</h3>
+                    <p>Woodford and other midland locations</p>
+                    <p id='IMDB' style='display:none'>tt0878674</p>
+                    `,
                 },
                 {
-                    coords: { lat: 52.972418, lng: -9.423699 },
-                    content: '<h3>Harry Potter and the Half-Blood Prince</h3><p id="IMDB" style="display:none">tt0417741</p><p id="youtubeTrailer" style="display:none"><iframe width="560" height="315" src="https://www.youtube.com/embed/JYLdTuL9Wjw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>',
-                    filmName: "Harry Potter and the Half-Blood Prince",
-                    filmID: "tt0417741"
+                    coords: { lat: 52.976212, lng: -9.4210975 },
+                    content: `<h3>Harry Potter and the Half-Blood Prince</h3>
+                    <p>Cliffs of Moher</p>
+                    <p id='IMDB' style='display:none'>tt0417741</p>
+                    `
                 },
                 {
                     coords: { lat: 51.7712833, lng: -10.5449314 },
-                    content: "<h3>Star Wars: Episode VII - The Force Awakens</h3><p id='IMDB' style='display:none'>tt2488496</p>",
-                    filmName: "Star Wars: Episode VII - The Force Awakens",
-                    filmID: "tt2488496"
+                    content: `<h3>Star Wars: Episode VII - The Force Awakens</h3>
+                    <p>Skellig Michael</p>
+                    <p id='IMDB' style='display:none'>tt2488496</p>
+                    `,
                 },
                 {
                     coords: { lat: 52.402581, lng: -6.356075 },
-                    content: "<h3>Saving Private Ryan</h3><p id='IMDB' style='display:none'>tt0120815</p>",
-                    filmName: "Saving Private Ryan",
-                    filmID: "tt0120815"
+                    content: `<h3>Saving Private Ryan</h3>
+                    <p>Curracloe</p>
+                    <p id='IMDB' style='display:none'>tt0120815</p>
+                    `,
                 },
                 {
                     coords: { lat: 53.1291441, lng: -6.7076051 },
-                    content: "<h3>Black 47</h3><p id='IMDB' style='display:none'>tt3208026</p>",
-                    filmName: "Black 47",
-                    filmID: "tt3208026"
+                    content: `<h3>Black '47</h3>
+                    <p>Harristown House</p>
+                    <p id='IMDB' style='display:none'>tt3208026</p>
+                    `,
                 },
                 {
                     coords: { lat: 53.1829611, lng: -6.1812657 },
-                    content: "<h3>Barry Lyndon</h3><p id='IMDB' style='display:none'>tt0072684</p>",
-                    filmName: "Barry Lyndon",
-                    filmID: "tt0072684"
+                    content: `<h3>Barry Lyndon</h3>
+                    <p>Powerscourt House</p>
+                    <p id='IMDB' style='display:none'>tt0072684</p>
+                    `,
                 },
                 {
                     coords: { lat: 51.9114852, lng: -8.4817243 },
-                    content: "<h3>Young Offenders</h3><p id='IMDB' style='display:none'>tt4714568</p>",
+                    content: `<h3>The Young Offenders</h3>
+                    <p>Cork city and county and Atlantic coastline</p>
+                    <p id='IMDB' style='display:none'>tt4714568</p>
+                    `,
                 },
                 {
                     coords: { lat: 53.16136749421548, lng: -6.8475166851461395  },
@@ -161,4 +169,37 @@ let markers = [/*
                     `
                 },
             ];
+function initMap() {
+            let options = {
+                zoom: 7,
+                center: {
+                    lat: 52.9462449, lng: -8.3522866
+                }
+            }
+
+            let map = new google.maps.Map(document.getElementById("map"), options);
+
+            //Loop through to get info for all markers and run addMarker function for each one
+            for (i = 0; i < markers.length; i++) {
+                addMarker(markers[i]);
+            }  
+            //Add marker
+        function addMarker(props) {
+                let infowindow = new google.maps.InfoWindow({ content: props.content });
+                let marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                });
+                if (props.iconImage) {
+                    marker.setIcon(props.iconImage);
+                }
+                marker.addListener("click", function () {
+                    if (activeInfoWindow) { activeInfoWindow.close(); } //Only open one infowindow at a time
+                    infowindow.open(map, marker);
+                    activeInfoWindow = infowindow;
+                    loadMovieDetails();
+                }); 
+        }
+        
+            }
 
