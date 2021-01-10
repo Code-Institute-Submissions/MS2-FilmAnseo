@@ -118,5 +118,47 @@ let markers = [/*
                     <p id='IMDB' style='display:none'>tt2016894</p>
                     `
                 },
+                {
+                    coords: { lat: 53.3437935, lng: -6.2545716},
+                    content: `<h3>Brooklyn</h3>
+                    <p>Enniscorthy</p>
+                    <p id='IMDB' style='display:none'>tt2381111</p>
+                    `
+                },
+                {
+                    coords: { lat: 52.1406436, lng: -10.2802415},
+                    content: `<h3>Ryan's Daughter</h3>
+                    <p>Dingle</p>
+                    <p id='IMDB' style='display:none'>tt0066319</p>
+                    `
+                },
+                {
+                    coords: { lat: 53.0110258, lng: -8.9972987},
+                    content: `<h3>The Silver Branch</h3>
+                    <p>The Burren</p>
+                    <p id='IMDB' style='display:none'>tt7468070</p>
+                    `
+                },
+                {
+                    coords: { lat: 53.5955947, lng: -9.7018873},
+                    content: `<h3>The Field</h3>
+                    <p>Leenaun</p>
+                    <p id='IMDB' style='display:none'>tt0099566</p>
+                    `
+                },
+                {
+                    coords: { lat: 53.2949432, lng: -9.6973137},
+                    content: `<h3>The Guard</h3>
+                    <p>Lettermore</p>
+                    <p id='IMDB' style='display:none'>tt1540133</p>
+                    `
+                },
+                {
+                    coords: { lat: 53.5408714, lng: -9.2903042},
+                    content: `<h3>The Quiet Man</h3>
+                    <p>Cong and other nearby locations</p>
+                    <p id='IMDB' style='display:none'>tt0045061</p>
+                    `
+                },
             ];
 
