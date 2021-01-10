@@ -82,6 +82,18 @@ Excellent resource that served as the base for this approach: https://www.youtub
 ## How to get the required movie ID from the clicked map marker to JS
 I'm not sure if the approach I've taken here is the best, but it seems to work ok. My problem was how to make the connection from what happens on the map (info  changes dynamically depending on the marker clicked) and the main HTML page. The resolution I've gone with is to use jQuery to acces the value of a hidden paragraph and use that value as the basis for querying the movie APIs and populating the HTML.
 
+## How to Open map in terrain Mode by Default
+The hybrid mode in which the map opens is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the colr scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
+To open in terrain mode by default, added the following code to the initmap() function:
+```JavaScript
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+    ``` 
+
+Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
+
+
+
 
 
 
