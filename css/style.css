@@ -1,3 +1,9 @@
 #map{
     height: 400px;
 }
+.appTitle{
+    background-color: #646F58;
+    color: #fafafa;
+    text-align: center;
+    margin-bottom: 0px;
+}
