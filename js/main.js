@@ -173,11 +173,12 @@ function initMap() {
     let options = {
         zoom: 7,
         center: {
-            lat: 52.9462449, lng: -8.3522866},
+            lat: 52.9462449, lng: -8.3522866
+        },
         disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.TERRAIN //Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
-        }
-    
+    }
+
 
     let map = new google.maps.Map(document.getElementById("map"), options);
 
@@ -206,28 +207,96 @@ function initMap() {
 }
 //Get movie details from OMDB API and call functions to populate HTML
 function loadMovieDetails() {
-                google.maps.event.addListener(activeInfoWindow, 'domready', function () {
-                    let idForSearch = document.getElementById("IMDB").innerHTML;
-                    let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
-                    let jsonData;
-                    //console.log(idForSearch);
-                    //console.log(OMDBUrl);
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            let data = this.responseText;
-                            let jsonData = JSON.parse(data);
-                            let movieArray = Object.entries(jsonData);
-                            //console.log(movieArray);
-                            console.log(jsonData);
-                            buildOutTable(jsonData);
-                            buildOutPosterDiv(jsonData);
-                            buildOutTrailerDiv(idForSearch);
-                        };
-                    }
-                    xhttp.open("GET", OMDBUrl, true);
-                    xhttp.send();
+    google.maps.event.addListener(activeInfoWindow, 'domready', function () {
+        let idForSearch = document.getElementById("IMDB").innerHTML;
+        let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
+        let jsonData;
+        //console.log(idForSearch);
+        //console.log(OMDBUrl);
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = this.responseText;
+                let jsonData = JSON.parse(data);
+                let movieArray = Object.entries(jsonData);
+                //console.log(movieArray);
+                console.log(jsonData);
+                buildOutTable(jsonData);
+                buildOutPosterDiv(jsonData);
+                buildOutTrailerDiv(idForSearch);
+            };
+        }
+        xhttp.open("GET", OMDBUrl, true);
+        xhttp.send();
 
-                });
-            }
+    });
+}
+
+// Use the movie details returned by loadMovieDetails() to populate HTML table
+function buildOutTable(movie) {
+    document.getElementById("movie-details").innerHTML =
+        `
+                <table>
+        <tr>
+            <td>Title</td>
+            <td>${movie.Title}</td>
+        </tr>
+        <tr>
+            <td>Genre</td>
+            <td>${movie.Genre}</td>
+        </tr>
+        <tr>
+            <td>Released</td>
+            <td>${movie.Released}</td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>${movie.Director}</td>
+        </tr>
+        <tr>
+            <td>Plot</td>
+            <td>${movie.Plot}</td>
+        </tr>
+        <tr>
+            <td>Runtime</td>
+            <td>${movie.Runtime}</td>
+        </tr>
+        <tr>
+            <td>Written By</td>
+            <td>${movie.Writer}</td>
+        </tr>
+        <tr>
+            <td>Starring</td>
+            <td>${movie.Actors}</td>
+        </tr>
+
+        <tr>
+            <td>Awards</td>
+            <td>${movie.Awards}</td>
+        </tr>
+
+        <tr>
+            <td>Production Company</td>
+            <td>${movie.Production}</td>
+        </tr>
+
+        <tr>
+            <td>Box Office</td>
+            <td>${movie.BoxOffice}</td>
+        </tr>
+
+        <tr>
+            <td>IMDb Rating</td>
+            <td>${movie.imdbRating}</td>
+        </tr>
+    </table>
+                `
+}
+
+// Use the movie details returned by loadMovieDetails() to populate the poster div 
+function buildOutPosterDiv(movie) {
+    document.getElementById("movie-poster").innerHTML =
+        `<img src=${movie.Poster}/>`
+}
+
 
