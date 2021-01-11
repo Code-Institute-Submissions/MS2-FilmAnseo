@@ -15,9 +15,9 @@ let markers = [/*
                     `
                 },*/
     {
-        coords: { lat: 53.052850, lng: -8.400172 },
+        coords: { lat: 53.1171605, lng: -8.0269183 },
         content: `<h3>Garage</h3>
-                    <p>Woodford and other midland locations</p>
+                    <p>Rathcabbin and other midland locations</p>
                     <p id='IMDB' style='display:none'>tt0878674</p>
                     `,
     },
@@ -168,6 +168,13 @@ let markers = [/*
                     <p id='IMDB' style='display:none'>tt0045061</p>
                     `
     },
+    {
+        coords: { lat: 51.9457143, lng: -9.1714211 },
+        content: `<h3>The Wind That Shakes The Barley</h3>
+                    <p>Ballyvourney and around</p>
+                    <p id='IMDB' style='display:none'>tt0460989</p>
+                    `
+    }
 ];
 function initMap() {
     let options = {
@@ -236,7 +243,7 @@ function loadMovieDetails() {
 function buildOutTable(movie) {
     document.getElementById("movie-details").innerHTML =
         `
-                <table>
+                <table class="table">
         <tr>
             <td>Title</td>
             <td>${movie.Title}</td>
