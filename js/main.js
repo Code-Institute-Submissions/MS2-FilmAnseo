@@ -202,5 +202,32 @@ function initMap() {
             loadMovieDetails();
         });
     }
+
 }
+//Get movie details from OMDB API and call functions to populate HTML
+function loadMovieDetails() {
+                google.maps.event.addListener(activeInfoWindow, 'domready', function () {
+                    let idForSearch = document.getElementById("IMDB").innerHTML;
+                    let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
+                    let jsonData;
+                    //console.log(idForSearch);
+                    //console.log(OMDBUrl);
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            let data = this.responseText;
+                            let jsonData = JSON.parse(data);
+                            let movieArray = Object.entries(jsonData);
+                            //console.log(movieArray);
+                            console.log(jsonData);
+                            buildOutTable(jsonData);
+                            buildOutPosterDiv(jsonData);
+                            buildOutTrailerDiv(idForSearch);
+                        };
+                    }
+                    xhttp.open("GET", OMDBUrl, true);
+                    xhttp.send();
+
+                });
+            }
 
