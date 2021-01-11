@@ -52,7 +52,7 @@ Separate file
 Via the DOM, the infowindow provides the base information (ID) for the selected movie so it is important that only a single infowindow be open at any one time. I had some issues implementing this at first but it was finally resolved by setting the infowindow as active infowindow and then closing the 'active' info window when a marker is clicked: 
 ```javascript
 if (activeInfoWindow) { activeInfoWindow.close(); }
-...
+[...]
 infowindow.open(map, marker);
 activeInfoWindow = infowindow;
 ```
@@ -61,6 +61,25 @@ https://stackoverflow.com/questions/35428563/how-to-close-all-infowindow-of-mark
 Also consulted: 
 https://support.advancedcustomfields.com/forums/topic/google-map-infowindow-close/
 https://hashnode.com/post/google-maps-api-onclick-on-marker-close-infowindow-of-other-markers-ciou68dw708x33353les71nyi
+
+### How to access the id for the movie
+The IMDb ID is the central piece of info to allow the API to return results for a particular movie. My problem was how to link the key for a specific move with a specific marker so that the correct API request was sent for the marker.
+Initially, I included the key as innerHTML in a hidden "<p>" element in the InfoWindow content. However, this seemed like a clumsy approach and was confirmed as such by my mentor who advised providing a property in the marker object to hold this info rather than the HTML. This was an easy fix and once identified I could simply reassign the idForSearch variable:
+From:
+```JavaScript
+let idForSearch = document.getElementById("IMDB").innerHTML;
+```
+To 
+```JavaScript
+let idForSearch = activeInfoWindow.anchor.movieId; 
+```
+### Get trailer data
+The OMDB API being used to return the results dos not provide a convenient way to access a trailer. TMDB is a another free movie API that does provide an ID that can be used to build a url to access a youtube trailer. For that reason, I switch to the TMDB API to furnish the details for the trailer.
+So, why not just use the TMDB API altogether?
+I started with that idea but I prefer the set of results returned by OMDB and find it easier to work with.
+
+See: https://github.com/omdbapi/OMDb-API/issues/180
+
 
 ### How to Access the Required Info from the TMDB Response
 The app uses two movie APIs. The main one is OMDB, but this does not provide any info to access a trailer. TMDB does - but to access it required dot and bracket notation:
@@ -79,16 +98,13 @@ Because there is quite a bit of data used to populate the HTML divs, the code wa
 This was resolved by separating the build out of the HTML sections to separate functions. The HTML was set up using template literals.
 Excellent resource that served as the base for this approach: https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s
 
-## How to get the required movie ID from the clicked map marker to JS
-I'm not sure if the approach I've taken here is the best, but it seems to work ok. My problem was how to make the connection from what happens on the map (info  changes dynamically depending on the marker clicked) and the main HTML page. The resolution I've gone with is to use jQuery to acces the value of a hidden paragraph and use that value as the basis for querying the movie APIs and populating the HTML.
-
 ## How to Open map in terrain Mode by Default
 The hybrid mode in which the map opens is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the colr scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
 To open in terrain mode by default, added the following code to the initmap() function:
 ```JavaScript
-    disableDefaultUI: true,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
-    ``` 
+disableDefaultUI: true,
+mapTypeId: google.maps.MapTypeId.TERRAIN
+``` 
 
 Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
 
