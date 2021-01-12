@@ -243,21 +243,25 @@ function buildOutTable(movie) {
             <td>${movie.Title}</td>
         </tr>
         <tr>
-            <td>Genre</td>
-            <td>${movie.Genre}</td>
+            <td>Plot</td>
+            <td>${movie.Plot}</td>
         </tr>
+        </table>`
+    document.getElementById("optional-movie-details").innerHTML =    
+        `<div id="optional-rows"><table class="table" >
         <tr>
             <td>Released</td>
             <td>${movie.Released}</td>
         </tr>
         <tr>
+            <td>Genre</td>
+            <td>${movie.Genre}</td>
+        </tr>
+        <tr>
             <td>Director</td>
             <td>${movie.Director}</td>
         </tr>
-        <tr>
-            <td>Plot</td>
-            <td>${movie.Plot}</td>
-        </tr>
+        
         <tr>
             <td>Runtime</td>
             <td>${movie.Runtime}</td>
@@ -289,8 +293,10 @@ function buildOutTable(movie) {
         <tr>
             <td>IMDb Rating</td>
             <td>${movie.imdbRating}</td>
-        </tr>
+        </tr>                
     </table>
+    </div>
+    <div id="toggle-bar"><p id="toggle-button">Show More / Show Less</p></div>
                 `
 }
 
@@ -299,5 +305,16 @@ function buildOutPosterDiv(movie) {
     document.getElementById("movie-poster").innerHTML =
         `<img src=${movie.Poster}/>`
 }
+
+// jQuery effects
+
+$('#optional-movie-details').on('click', '#toggle-bar', function () {
+     $("#optional-rows").toggle(800);
+});
+
+//$("#toggle-button").click (function (){
+//    $("#optional-rows").toggle(1000);    
+//});
+
 
 
