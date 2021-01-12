@@ -108,6 +108,38 @@ mapTypeId: google.maps.MapTypeId.TERRAIN
 
 Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
 
+## How to Fix Issue with No Listener for jQuery Selector
+I had an issue whereby the following code did nothing:
+```JavaScript
+$("#toggle-button").click (function (){
+      $("#optional-rows").toggle(1000);    
+});
+```
+Looked into:
+Is the issue with CSS (display: none)? - no, seemed like jQuery show() method should override that.
+Is it an issue with placement of the jQuery file? - checked fine
+Is it an issue with '$' - replaced that with jQuery, no better.
+Checked jQuery debugging strategy outlined here: https://www.simonbattersby.com/blog/debugging-jquery-a-beginners-guide/
+On this post (https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art044), checking the DOM for an event listener on the selector was mentioned. I did that and found that there was nothing being listened for:
+
+screenshot here
+
+Changin g to the following code fixed the issue:
+```javascript
+$('body').on('click', '#toggle-button', function () {
+     $("#optional-rows").toggle(1000);
+});
+```
+Source: https://stackoverflow.com/questions/10920355/attaching-click-event-to-a-jquery-object-not-yet-added-to-the-dom
+
+This is improved by moving down the DOM to a nearer parent to my intended target than 'body', so code now reads:
+```JavaScript
+$('#optional-movie-details').on('click', '#toggle-button', function () {
+     $("#optional-rows").toggle(1000);
+});
+```
+
+
 
 
 
