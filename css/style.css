@@ -23,3 +23,22 @@
     background-size: cover;
     height: 150px;
 }
+
+#optional-rows{
+    display: none;
+}
+
+#toggle-button{
+    text-align: center;
+    color: #fafafa;
+}
+#toggle-bar{
+    background-color: #7D8570;
+    text-align: center;
+    height: 50px;
+    color: #fafafa;
+}
+
+.table{
+    margin-bottom: 0px;
+}
