@@ -10,3 +10,10 @@ https://ifi.ie/silver-branch/
 
 https://www.irishcentral.com/travel/where-quiet-man-filmed-ireland
 
+https://www.independent.ie/life/travel/on-location-irelands-most-famous-film-locations-29134108.html
+
+Images:
+
+https://film-grab.com/
+
+
