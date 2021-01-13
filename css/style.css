@@ -1,6 +1,10 @@
-#map{
-    height: 400px;
-}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/*----------------------------------------------------- Header area above the map */ 
+
 .appTitle{
     background-color: #000000;
     color: #fafafa;
@@ -11,10 +15,7 @@
     height: 50px;
     line-height: 50px;
 }
-#movie-poster{
-        background-color: #000000;
-        text-align: center;
-}
+
 #image-header{
     width: 100%;
     background-image: url("/images/ryans_daughter_headerimage.jpg"); 
@@ -23,11 +24,50 @@
     background-size: cover;
     height: 150px;
 }
+#intro{
+    background-color: #e0c963;
+    color: #000000;
+    text-align: center;
+}
+blockquote{
+    padding: 5px 25px 5px;
+    margin: auto;
+    font-family: "Bangers", sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+#info-option-bar{
+text-align: center;
+font-size: large;
+background-color: #7D8570;
+color: #fafafa;
+}
+#info-option-bar p{
+    margin: 0px;
+    font-size: smaller;
+    font-style: italic;
+}
+h4{
+    font-family: "Bangers", sans-serif;
+    padding: 5px 25px 5px;
+    text-transform: uppercase;
+    margin: auto;
+}
 
-#optional-rows{
+#how-it-works{
     display: none;
 }
 
+
+
+/*----------------------------------------------------------------------- Map area */
+#map{
+    height: 400px;
+}
+/*------------------------------------------------------------------------ Move info section*/
+#optional-rows{
+    display: none;
+}
 #toggle-button{
     text-align: center;
     color: #fafafa;
@@ -38,7 +78,10 @@
     height: 50px;
     color: #fafafa;
 }
-
 .table{
     margin-bottom: 0px;
+}
+#movie-poster{
+        background-color: #000000;
+        text-align: center;
 }
