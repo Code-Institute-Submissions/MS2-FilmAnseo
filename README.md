@@ -24,6 +24,8 @@ Have a sense of the cinema - ie black or dark charcoal grey surrounfing the trai
 Incorporate green as the color most associated with Ireland
 Have muted colors that won't clash with movie posters or trailers
 
+https://imagecolorpicker.com/
+
 ## Features
 
 ### Map
@@ -33,6 +35,11 @@ Have muted colors that won't clash with movie posters or trailers
 ### Image
 
 ### Contact
+Working contact form based on the 'Sending Emails Using EMailJS" lesson in interactive frontend module.
+Form is working and sends a message as follows:
+ 
+ Add Image Here
+
 
 ### Features to implement in the future
 
