@@ -311,3 +311,7 @@ function buildOutPosterDiv(movie) {
 $('#optional-movie-details').on('click', '#toggle-bar', function () {
      $("#optional-rows").toggle(800);
 });
+$("body").on('click', '#info-option-bar', function(){
+    $('#how-it-works').toggle(800);
+}
+)
