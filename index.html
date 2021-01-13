@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <title>Film Anseo</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_ddrXfeUvflt7uVEhnrkEJ"); 
+   })();
+</script>
+<script type="text/javascript" src="js/sendEmail.js"></script> 
 </head>
 
 <body>
@@ -28,13 +37,69 @@
     </div>
     <div id="movie-trailer">
     </div>
+    <div id="contact-form">
+        <form id ="filmanseo-form" onsubmit= "return sendMail(this);">
+                <h2>Want to add a film to the map?</h2>
+                <label for="name">Name</label><br />
+                <input
+                  class="text-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+                <label for="email_1">Email Address</label><br />
+                <input
+                  class="text-input"
+                  type="email"
+                  id="email_1"
+                  name="email_address"
+                  required
+                />
+                <br />
+                <label for="film_add_name">Film to Add</label><br />
+                <input
+                  class="text-input"
+                  type="text"
+                  id="film_add_name"
+                  name="film_add_name"
+                  required
+                />
+                <br />
+                <label for="film_add_location">Where in Ireland was it shot?</label><br />
+                <input
+                  class="text-input"
+                  type="text"
+                  id="film_add_location"
+                  name="film_add_location"
+                  required
+                />
+                <br />
+                <label for="message_text">Message</label><br />
+                <textarea
+                  class="message-text"
+                  id="message_text"
+                  name="message_text"
+                  maxlength="400"
+                  placeholder="Max 400 characters"
+                  required
+                ></textarea>
+                <input
+                  class="send-button"
+                  type="submit"
+                  value="Send my message"
+                  title="Send us your message"
+                />
+              </form>
+    </div>
 
     <!-- JS -->
     <script src="js/main.js"></script>
+    
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
         </script>
-
+           
 </body>
 
 </html>
