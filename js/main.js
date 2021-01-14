@@ -306,6 +306,33 @@ function buildOutPosterDiv(movie) {
         `<img src=${movie.Poster}/>`
 }
 
+// Use the movie details returned by loadMovieDetails() to get the youtube url for trailer
+function buildOutTrailerDiv(SearchID) {
+                let trailerSearch = `https://api.themoviedb.org/3/movie/${SearchID}/videos?api_key=cc7f7add0a01568599af8799c924f016`;
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let trailerInfo = this.responseText;
+                        let jsonTrailer = JSON.parse(trailerInfo);
+                        //console.log(jsonTrailer.results[0].key);
+                        youtubeTrailerId = jsonTrailer.results[0].key;
+                        displayTrailer(youtubeTrailerId);
+                    };
+                }
+                xhttp.open("GET", trailerSearch, true);
+                    xhttp.send();
+            }
+
+// Use the url from buildOut TrailerDiv() to display the trailer
+function displayTrailer(youtube){
+                document.getElementById("movie-trailer").innerHTML =
+                    `<div><iframe width="100%" height="315" src="https://www.youtube.com/embed/${youtube}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>`
+            }
+
+
+
+
+
 // jQuery effects
 
 $('#optional-movie-details').on('click', '#toggle-bar', function () {
