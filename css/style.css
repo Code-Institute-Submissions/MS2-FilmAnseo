@@ -16,7 +16,7 @@
     line-height: 50px;
 }
 
-#image-header{
+.image-header1{
     width: 100%;
     background-image: url("/images/ryans_daughter_headerimage.jpg"); 
     background-repeat: no-repeat;
@@ -24,13 +24,29 @@
     background-size: cover;
     height: 150px;
 }
+.image-header2{
+    width: 100%;
+    background-image: url("/images/young-offenders-headerswap.jpg"); 
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 150px;
+}
 #intro{
+    display: none;
     background-color: #e0c963;
     color: #000000;
     text-align: center;
 }
-blockquote{
-    padding: 5px 25px 5px;
+.quote-line1{
+    padding: 5px 25px 0px;
+    margin: auto;
+    font-family: "Bangers", sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+.quote-line2{
+    padding: 0px 25px 5px;
     margin: auto;
     font-family: "Bangers", sans-serif;
     font-size: 1.5em;
@@ -42,14 +58,16 @@ font-size: large;
 background-color: #7D8570;
 color: #fafafa;
 }
-#info-option-bar p{
+#your-responsibility-text{
+    display: none;
     margin: 0px;
+    padding-bottom: 5px;
     font-size: smaller;
     font-style: italic;
 }
-h4{
+#info-option-bar h4{
     font-family: "Bangers", sans-serif;
-    padding: 5px 25px 5px;
+    padding: 8px 25px 4px;
     text-transform: uppercase;
     margin: auto;
 }
