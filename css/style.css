@@ -1,4 +1,5 @@
 
+/*----------------------------------------------------- Google Fonts */
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
@@ -28,7 +29,7 @@
     width: 100%;
     background-image: url("/images/young-offenders-headerswap.jpg"); 
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
     height: 150px;
 }
@@ -95,6 +96,7 @@ color: #fafafa;
     text-align: center;
     height: 50px;
     color: #fafafa;
+    line-height: 50px;
 }
 .table{
     margin-bottom: 0px;
