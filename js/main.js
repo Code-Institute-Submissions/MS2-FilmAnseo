@@ -233,7 +233,7 @@ function loadMovieDetails() {
     });
 }
 
-// Use the movie details returned by loadMovieDetails() to populate HTML table
+// Use the movie details returned by loadMovieDetails() to populate movie details table
 function buildOutTable(movie) {
     document.getElementById("movie-details").innerHTML =
         `
@@ -306,7 +306,7 @@ function buildOutPosterDiv(movie) {
         `<img src=${movie.Poster}/>`
 }
 
-// Use the movie details returned by loadMovieDetails() to get the youtube url for trailer
+// Use the movie details returned by loadMovieDetails() to get the youtube url for trailer (uses TMDB API)
 function buildOutTrailerDiv(SearchID) {
                 let trailerSearch = `https://api.themoviedb.org/3/movie/${SearchID}/videos?api_key=cc7f7add0a01568599af8799c924f016`;
                 let xhttp = new XMLHttpRequest();
@@ -330,15 +330,14 @@ function displayTrailer(youtube){
             }
 
 
-
-
-
-// jQuery effects
+// jQuery 
 
 $('#optional-movie-details').on('click', '#toggle-bar', function () {
      $("#optional-rows").toggle(800);
 });
 $("body").on('click', '#info-option-bar', function(){
     $('#how-it-works').toggle(800);
-}
-)
+    $('#intro').toggle(800);
+    $('#image-header').toggleClass('image-header2')
+    $('#your-responsibility-text').toggle(800);                 
+});
