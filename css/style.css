@@ -3,6 +3,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
 
 /*----------------------------------------------------- Header area above the map */ 
 
@@ -75,6 +76,13 @@ color: #fafafa;
 
 #how-it-works{
     display: none;
+    background-color: #e0c963;
+    color: black;
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+#how-it-works p{
+    margin-bottom: 0px;
 }
 
 
@@ -85,21 +93,21 @@ color: #fafafa;
 }
 
 /*------------------------------------------------------------------------ Weather info section*/
-/*#weather-details{
-    background-color: #7D8570;
-    color: #fafafa;
-    text-align: center;
-}*/
+
 #weather-icon{
     background-color: #7D8570;
     color: #fafafa;
     text-align: center;
 }
 #weather-details{
-    background-color: #7D8570;
-    color: #fafafa;
+    background-color: #e0c963;
+    color: #000000;
     text-align: center;
     display: none;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+#weather-details p{
+    margin-bottom: 0px;
 }
 
 
@@ -110,6 +118,7 @@ color: #fafafa;
 #toggle-button{
     text-align: center;
     color: #fafafa;
+    font-family: "Open Sans Condensed", sans-serif;
 }
 #toggle-bar{
     background-color: #7D8570;
@@ -124,4 +133,9 @@ color: #fafafa;
 #movie-poster{
         background-color: #000000;
         text-align: center;
+}
+
+/*------------------------------------------------------------------------ Contact form*/
+#contact-form{
+    max-width: 75%;
 }
