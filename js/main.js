@@ -3,6 +3,7 @@ let activeInfoWindow;
 let idForSearch;
 let OMDBUrl;
 let youtubeTrailerId;
+let weatherCoords;
 
 
 //Marker list for movies (to go inside the init map function):
@@ -13,6 +14,8 @@ let markers = [
                     <p>Rathcabbin and other midland locations</p>
                     `,
         id: "tt0878674",
+        lat: "53.1171605", 
+        lng: "-8.0269183"
 
     },
     {
@@ -200,6 +203,7 @@ function initMap() {
             if (activeInfoWindow) { activeInfoWindow.close(); } // Only open one infowindow at a time
             infowindow.open(map, marker);
             activeInfoWindow = infowindow;
+            weatherCoords = props.coords;
             loadMovieDetails();
         });
     }
@@ -210,6 +214,7 @@ function loadMovieDetails() {
     google.maps.event.addListener(activeInfoWindow, 'domready', function () {
         //console.log(activeInfoWindow.anchor.movieId);
         let idForSearch = activeInfoWindow.anchor.movieId;
+        //let weatherCoords = activeInfoWindow.position;
         let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
         let jsonData;
         //console.log(idForSearch);
@@ -225,6 +230,7 @@ function loadMovieDetails() {
                 buildOutTable(jsonData);
                 buildOutPosterDiv(jsonData);
                 buildOutTrailerDiv(idForSearch);
+                buildOutWeatherDiv(weatherCoords);
             };
         }
         xhttp.open("GET", OMDBUrl, true);
@@ -232,6 +238,34 @@ function loadMovieDetails() {
 
     });
 }
+
+//Use the coords of the selected location to get today's weather for that spot
+function buildOutWeatherDiv(weatherCoords){
+    let weatherLat = weatherCoords.lat;
+    let weatherLon = weatherCoords.lng;
+    let weatherSearch = `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherLat}&lon=${weatherLon}&exclude=hourly,daily,minutely&appid=4f9b430d616685ff2fd726e57ca8e071&units=metric`;
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let weatherInfo = this.responseText;
+                        let jsonWeather = JSON.parse(weatherInfo);
+                        console.log(jsonWeather);
+                        displayWeatherInfo(jsonWeather);
+                    };
+                }
+                xhttp.open("GET", weatherSearch, true);
+                    xhttp.send();
+}
+
+function displayWeatherInfo(weatherInfo){
+    let weatherIcon=weatherInfo.current.weather[0].icon;
+    let weatherDescription=weatherInfo.current.weather[0].description;
+    document.getElementById("weather-details").innerHTML =
+`<p>Weather today at this location: ${weatherDescription}</p>
+<p><img src="https://openweathermap.org/img/wn/${weatherIcon}.png"/></p>
+`
+}
+
 
 // Use the movie details returned by loadMovieDetails() to populate movie details table
 function buildOutTable(movie) {
