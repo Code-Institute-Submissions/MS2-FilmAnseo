@@ -32,6 +32,12 @@ https://imagecolorpicker.com/
 
 ### Info table
 
+### Weather Info
+For a user of the site whi may be thinking of making a trip to a location featured on the map, it iis important to have a quick view on what the weather is forecast for today. To this end, weather info is presented uniquely for each marker location on the map.
+The weather info changes and is up to date for the location selected in the map. The same lat and lng coordinates as are used to place the markers are used to make a call to the Open Weather API(https://openweathermap.org/api).
+For the purposeds of a clean UI, the weather data being displayed is restricted to an icon and a very short description. 
+
+
 ### Image
 
 ### Contact
@@ -93,6 +99,7 @@ The app uses two movie APIs. The main one is OMDB, but this does not provide any
 ```javascript
 youtubeTrailerId = jsonTrailer.results[0].key;
 ```
+- see related issue regarding trailer for The Silver Branch
 
 Resources consulted on this:
 https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
@@ -106,7 +113,7 @@ This was resolved by separating the build out of the HTML sections to separate f
 Excellent resource that served as the base for this approach: https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s
 
 ## How to Open map in terrain Mode by Default
-The hybrid mode in which the map opens is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the colr scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
+The hybrid mode in which the map opens is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the color scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
 To open in terrain mode by default, added the following code to the initmap() function:
 ```JavaScript
 disableDefaultUI: true,
@@ -145,6 +152,15 @@ $('#optional-movie-details').on('click', '#toggle-button', function () {
      $("#optional-rows").toggle(1000);
 });
 ```
+
+### Issue with displaying trailer for The Silver Branch
+
+
+
+
+## Other resources:
+Dot notation (accessing the required data from the weather API): https://www.sitepoint.com/back-to-basics-javascript-object-syntax/
+
 
 
 
