@@ -83,7 +83,27 @@ color: #fafafa;
 #map{
     height: 400px;
 }
-/*------------------------------------------------------------------------ Move info section*/
+
+/*------------------------------------------------------------------------ Weather info section*/
+/*#weather-details{
+    background-color: #7D8570;
+    color: #fafafa;
+    text-align: center;
+}*/
+#weather-icon{
+    background-color: #7D8570;
+    color: #fafafa;
+    text-align: center;
+}
+#weather-details{
+    background-color: #7D8570;
+    color: #fafafa;
+    text-align: center;
+    display: none;
+}
+
+
+/*------------------------------------------------------------------------ Movie info section*/
 #optional-rows{
     display: none;
 }
