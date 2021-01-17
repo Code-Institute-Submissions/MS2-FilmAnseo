@@ -130,9 +130,18 @@ color: #fafafa;
 .table{
     margin-bottom: 0px;
 }
+.container-fluid{
+    padding: 0px;
+}
 #movie-poster{
         background-color: #000000;
         text-align: center;
+        width: 100%;
+}
+#movie-trailer{
+    background-color: #000000;
+    width: 100%;
+    padding-right: 0px 10px 0px;
 }
 
 /*------------------------------------------------------------------------ Contact form*/
