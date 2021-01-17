@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <title>Film Anseo</title>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_ddrXfeUvflt7uVEhnrkEJ"); 
-   })();
-</script>
-<script type="text/javascript" src="js/sendEmail.js"></script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_ddrXfeUvflt7uVEhnrkEJ");
+        })();
+    </script>
+    <script type="text/javascript" src="js/sendEmail.js"></script>
 </head>
 
 <body>
@@ -25,19 +24,22 @@
         <h3 class="appTitle">Film Anseo</h3>
     </div>
     <div id="image-header" class="image-header1"></div>
-    <div id="intro"><blockquote class="quote-line1" cite="https://www.imdb.com/title/tt4714568/?ref_=tt_ch">There are two things you need for an adventure,</blockquote> 
+    <div id="intro">
+        <blockquote class="quote-line1" cite="https://www.imdb.com/title/tt4714568/?ref_=tt_ch">There are two things you
+            need for an adventure,</blockquote>
         <blockquote class="quote-line2">a treasure map and someone dumb enough to go with you.</blockquote>
-    <cite>- The Young Offenders</cite></div>
-    <div id= "info-option-bar"><h4>How to use the map</h4> 
-        <p id="your-responsibility-text">(someone dumb enough to go with you is your responsibility)</p></div>
+        <cite>- The Young Offenders</cite>
+    </div>
+    <div id="info-option-bar">
+        <h4>How to use the map</h4>
+        <p id="your-responsibility-text">(someone dumb enough to go with you is your responsibility)</p>
+    </div>
     <div id="how-it-works">
-<p>Click a marker on the map to get the information for a movie that had scenes shot at that location.</p>  
-<p>Scroll down the page to see the movie details and promotional poster or watch the trailer. 
-</p>
-<p>The list of locations is a work in progress. If you think a move should be added, contact us using the form and we'll add it in.
-</p>
-<p>Maybe it helps you plan a movie-lovers day out!
-</p>
+        <p>Click a marker to get the movie name and basic info</p>
+        <p>Scroll down to see more details or watch the trailer.</p>
+        <p>Contact us below if you think a move should be added.</p>
+        <p>Maybe it helps you plan a movie-lovers day out!
+        </p>
 
 
     </div>
@@ -45,7 +47,7 @@
     </div>
     <div id="weather-icon"></div>
     <div id="weather-details"></div>
-    <div id="movie-details">    
+    <div id="movie-details">
     </div>
     <div id="optional-movie-details"></div>
     <div id="movie-poster">
@@ -53,68 +55,34 @@
     <div id="movie-trailer">
     </div>
     <div id="contact-form">
-        <form id ="filmanseo-form" onsubmit= "return sendMail(this);">
-                <h2>Want to add a film to the map?</h2>
+        <form id="filmanseo-form" onsubmit="return sendMail(this);" class="form-group">
+            <h2>Want to add a film to the map?</h2>
+            <div class="form-group">
                 <label for="name">Name</label><br />
-                <input
-                  class="text-input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
-                <label for="email_1">Email Address</label><br />
-                <input
-                  class="text-input"
-                  type="email"
-                  id="email_1"
-                  name="email_address"
-                  required
-                />
-                <br />
-                <label for="film_add_name">Film to Add</label><br />
-                <input
-                  class="text-input"
-                  type="text"
-                  id="film_add_name"
-                  name="film_add_name"
-                  required
-                />
-                <br />
-                <label for="film_add_location">Where in Ireland was it shot?</label><br />
-                <input
-                  class="text-input"
-                  type="text"
-                  id="film_add_location"
-                  name="film_add_location"
-                  required
-                />
-                <br />
-                <label for="message_text">Message</label><br />
-                <textarea
-                  class="message-text"
-                  id="message_text"
-                  name="message_text"
-                  maxlength="400"
-                  placeholder="Max 400 characters"
-                  required
-                ></textarea>
-                <input
-                  class="send-button"
-                  type="submit"
-                  value="Send my message"
-                  title="Send us your message"
-                />
-              </form>
+                <input class="form-control" type="text" id="name" name="name" required /></div>
+            <label for="email_1">Email Address</label><br />
+            <input class="form-control" type="email" id="email_1" name="email_address" required />
+            <br />
+            <label for="film_add_name">Film to Add</label><br />
+            <input class="form-control" type="text" id="film_add_name" name="film_add_name" required />
+            <br />
+            <label for="film_add_location">Where in Ireland was it shot?</label><br />
+            <input class="form-control" type="text" id="film_add_location" name="film_add_location" required />
+            <br />
+            <label for="message_text">Message</label><br />
+            <textarea class="form-control" id="message_text" name="message_text" maxlength="400"
+                placeholder="Max 400 characters" required></textarea>
+            <input class="send-button" type="submit" value="Send my message" title="Send us your message" />
+        </form>
     </div>
 
     <!-- JS -->
     <script src="js/main.js"></script>
-    
+
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
         </script>
-           
+
 </body>
 
 </html>
