@@ -260,9 +260,13 @@ function buildOutWeatherDiv(weatherCoords){
 function displayWeatherInfo(weatherInfo){
     let weatherIcon=weatherInfo.current.weather[0].icon;
     let weatherDescription=weatherInfo.current.weather[0].description;
-    document.getElementById("weather-details").innerHTML =
-`<p>Weather today at this location: ${weatherDescription}</p>
-<p><img src="https://openweathermap.org/img/wn/${weatherIcon}.png"/></p>
+    document.getElementById("weather-icon").innerHTML =
+`
+<div><img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/></p></div>
+`
+document.getElementById("weather-details").innerHTML =
+`
+<p>Weather today at this location: ${weatherDescription}</p></div>
 `
 }
 
@@ -374,4 +378,8 @@ $("body").on('click', '#info-option-bar', function(){
     $('#intro').toggle(800);
     $('#image-header').toggleClass('image-header2')
     $('#your-responsibility-text').toggle(800);                 
+});
+
+$("body").on('click', '#weather-icon', function(){
+    $("#weather-details").toggle(800);
 });
