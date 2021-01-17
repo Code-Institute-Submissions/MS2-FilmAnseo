@@ -262,11 +262,11 @@ function displayWeatherInfo(weatherInfo){
     let weatherDescription=weatherInfo.current.weather[0].description;
     document.getElementById("weather-icon").innerHTML =
 `
-<div><img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/></p></div>
+<img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
 `
 document.getElementById("weather-details").innerHTML =
 `
-<p>Weather today at this location: ${weatherDescription}</p></div>
+<p>Weather today at this location: ${weatherDescription}</p>
 `
 }
 
