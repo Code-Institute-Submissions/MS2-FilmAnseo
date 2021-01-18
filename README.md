@@ -58,6 +58,11 @@ APIs: Google Maps, OMDB, TMDB, JSMail
 
 ## Testing
 Separate file
+The Silver Branch does not have any info on TMDB so:
+If that is the first marker clicked, nothing happens
+If a marker has been clicked previously, the previous movie's trailer stays in place
+Fix:
+Add an if/else to main.js
 
 ## Main Issues Overcome
 
