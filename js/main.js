@@ -374,7 +374,9 @@ function buildOutTrailerDiv(SearchID) {
 // Use the url from buildOut TrailerDiv() to display the trailer
 function displayTrailer(youtube){
                 document.getElementById("movie-trailer").innerHTML =
-                    `<div><iframe width="100%" height="315" src="https://www.youtube.com/embed/${youtube}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>`
+                    `<div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${youtube}"  allowfullscreen></iframe>
+                    </div>`
             }
 
 
