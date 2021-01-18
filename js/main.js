@@ -243,7 +243,7 @@ function loadMovieDetails() {
 function buildOutWeatherDiv(weatherCoords){
     let weatherLat = weatherCoords.lat;
     let weatherLon = weatherCoords.lng;
-    let weatherSearch = `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherLat}&lon=${weatherLon}&exclude=hourly,daily,minutely&appid=4f9b430d616685ff2fd726e57ca8e071&units=metric`;
+    let weatherSearch = `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherLat}&lon=${weatherLon}&exclude=daily,minutely&appid=4f9b430d616685ff2fd726e57ca8e071&units=metric`;
                 let xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
@@ -260,6 +260,10 @@ function buildOutWeatherDiv(weatherCoords){
 function displayWeatherInfo(weatherInfo){
     let weatherIcon=weatherInfo.current.weather[0].icon;
     let weatherDescription=weatherInfo.current.weather[0].description;
+    let rainChance=
+    weatherInfo.hourly[0].pop
+    ;
+   
     document.getElementById("weather-icon").innerHTML =
 `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
@@ -267,6 +271,7 @@ function displayWeatherInfo(weatherInfo){
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
+<p>Chance of rain in next six hours: ${rainChance}</p>
 `
 }
 
