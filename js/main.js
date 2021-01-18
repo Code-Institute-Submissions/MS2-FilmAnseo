@@ -260,10 +260,15 @@ function buildOutWeatherDiv(weatherCoords){
 function displayWeatherInfo(weatherInfo){
     let weatherIcon=weatherInfo.current.weather[0].icon;
     let weatherDescription=weatherInfo.current.weather[0].description;
-    let rainChance=
-    weatherInfo.hourly[0].pop
-    ;
-   
+    //Use parseInt to return a number and ensure no long string of decimals (found in testing)
+    let rainChance={
+        hour1:parseInt(weatherInfo.hourly[0].pop*100),
+        hour2:parseInt(weatherInfo.hourly[1].pop*100),
+        hour3:parseInt(weatherInfo.hourly[2].pop*100),
+        hour4:parseInt(weatherInfo.hourly[3].pop*100),
+        hour5:parseInt(weatherInfo.hourly[4].pop*100),
+        hour6:parseInt(weatherInfo.hourly[5].pop*100),
+    };
     document.getElementById("weather-icon").innerHTML =
 `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
@@ -271,7 +276,8 @@ function displayWeatherInfo(weatherInfo){
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
-<p>Chance of rain in next six hours: ${rainChance}</p>
+<p>Chance of rain in next six hours: </p>
+<p>${rainChance.hour1}% - ${rainChance.hour2}% - ${rainChance.hour3}% - ${rainChance.hour4}% - ${rainChance.hour5}% - ${rainChance.hour6}%</p>
 `
 }
 
