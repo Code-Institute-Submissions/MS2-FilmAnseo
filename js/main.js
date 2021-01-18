@@ -351,11 +351,12 @@ function buildOutTable(movie) {
 // Use the movie details returned by loadMovieDetails() to populate the poster div 
 function buildOutPosterDiv(movie) {
     document.getElementById("movie-poster").innerHTML =
-        `<img src=${movie.Poster}/>`
+        `<div class="poster"><img src=${movie.Poster}/></div>`
 }
 
 // Use the movie details returned by loadMovieDetails() to get the youtube url for trailer (uses TMDB API)
 function buildOutTrailerDiv(SearchID) {
+                
                 let trailerSearch = `https://api.themoviedb.org/3/movie/${SearchID}/videos?api_key=cc7f7add0a01568599af8799c924f016`;
                 let xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -373,7 +374,8 @@ function buildOutTrailerDiv(SearchID) {
 
 // Use the url from buildOut TrailerDiv() to display the trailer
 function displayTrailer(youtube){
-                document.getElementById("movie-trailer").innerHTML =
+    console.log(youtube);            
+    document.getElementById("movie-trailer").innerHTML =
                     `<div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${youtube}"  allowfullscreen></iframe>
                     </div>`
