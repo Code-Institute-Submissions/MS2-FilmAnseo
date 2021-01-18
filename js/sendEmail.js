@@ -1,5 +1,3 @@
-console.log("check");
-
 function sendMail(contactForm){
     emailjs.send("service_xm6go8k","template_bk2ro5o",{
 from_name: contactForm.name.value,

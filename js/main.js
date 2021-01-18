@@ -281,7 +281,6 @@ document.getElementById("weather-details").innerHTML =
 `
 }
 
-
 // Use the movie details returned by loadMovieDetails() to populate movie details table
 function buildOutTable(movie) {
     document.getElementById("movie-details").innerHTML =
@@ -390,7 +389,6 @@ $("body").on('click', '#info-option-bar', function(){
     $('#image-header').toggleClass('image-header2')
     $('#your-responsibility-text').toggle(800);                 
 });
-
 $("body").on('click', '#weather-icon', function(){
     $("#weather-details").toggle(800);
 });
