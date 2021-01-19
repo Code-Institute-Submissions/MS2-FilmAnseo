@@ -26,9 +26,21 @@
 </head>
 
 <body>
-    <div class="header-nav" role="navigation">
-        <p class="appTitle">Film Anseo</p><span id="dropdown-nav"><i class="fas fa-bars"></i></span>
-    </div>
+    <nav class="navbar navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleFANav">
+    <span><i class="fas fa-bars"></i></span>
+  </button><a class="navbar-brand" href="#">Film Anseo</a>
+  <div class="collapse navbar-collapse" id="collapsibleFANav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#api-ack">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact-form">Contact</a>
+      </li>  
+    </ul>
+  </div>  
+</nav>
     <div id="image-header" class="image-header1"></div>
     <div id="intro">
         <blockquote class="quote-line1" cite="https://www.imdb.com/title/tt4714568/?ref_=tt_ch">There are two things you
@@ -59,11 +71,7 @@
     </div>
     <div id="movie-trailer">
     </div>
-    <div id="api-ack">
-        <img class="logo" src="images/omdb-icon.png" alt="Logo for Open Movie database API">
-        <img class="logo" src="images/openweather-logo.jpg" alt="Logo for OpenWeather API">
-        <img class="logo" src="images/tmdb-icon.svg" alt="Logo for TMDB API">
-    </div>
+    
 
 
     <div id="contact-form">
@@ -87,6 +95,11 @@
             <input class="send-button" type="submit" value="Send my message" title="Send us your message" />
         </form>
     </div>
+    <div id="api-ack">
+        <img class="logo" src="images/omdb-icon.png" alt="Logo for Open Movie database API">
+        <img class="logo" src="images/openweather-logo.jpg" alt="Logo for OpenWeather API">
+        <img class="logo" src="images/tmdb-icon.svg" alt="Logo for TMDB API">
+    </div>
 
     <!-- JS -->
     <script src="js/main.js"></script>
@@ -94,9 +107,11 @@
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
         </script>
-        
-
-
+        <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 </body>
 
 </html>

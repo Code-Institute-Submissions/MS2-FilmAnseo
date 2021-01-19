@@ -7,16 +7,27 @@
 
 /*----------------------------------------------------- Header area above the map */ 
 
-.header-nav{
-   text-align: center;
+/*----------------------------------------------------- Navigation */
+.navbar-dark{
     background-color: #000000;
-    color: #fafafa;
-    margin-bottom: 0px;
-    font-family: "Cinzel", sans-serif;
-    letter-spacing: 0.5em;
-    height: 50px;
 }
-
+.fa-bars{
+    color: #fafafa;
+}
+.navbar-brand{
+    font-family: "Bangers", sans-serif;
+    padding-right: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: xx-large;
+}
+.navbar-toggler{
+    border: #fafafa;
+}
+.nav-link{
+    color: #fafafa;
+    font-family: "Bangers", sans-serif;
+}
 
 .image-header1{
     width: 100%;
