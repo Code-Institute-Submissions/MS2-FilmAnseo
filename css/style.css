@@ -7,16 +7,16 @@
 
 /*----------------------------------------------------- Header area above the map */ 
 
-.appTitle{
+.header-nav{
+   text-align: center;
     background-color: #000000;
     color: #fafafa;
-    text-align: center;
     margin-bottom: 0px;
     font-family: "Cinzel", sans-serif;
     letter-spacing: 0.5em;
     height: 50px;
-    line-height: 50px;
 }
+
 
 .image-header1{
     width: 100%;

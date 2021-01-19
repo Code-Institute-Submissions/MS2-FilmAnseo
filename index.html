@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <title>Film Anseo</title>
@@ -19,9 +25,9 @@
     <script type="text/javascript" src="js/sendEmail.js"></script>
 </head>
 
-<body>  
-    <div>
-        <h3 class="appTitle">Film Anseo</h3>
+<body>
+    <div class="header-nav" role="navigation">
+        <p class="appTitle">Film Anseo</p><span id="dropdown-nav"><i class="fas fa-bars"></i></span>
     </div>
     <div id="image-header" class="image-header1"></div>
     <div id="intro">
@@ -48,17 +54,17 @@
     <div id="movie-details">
     </div>
     <div id="optional-movie-details"></div>
-    
-        <div id="movie-poster">
-        </div>
-        <div id="movie-trailer">
-        </div>
-        <div id="api-ack">
-            <img class="logo" src="images/omdb-icon.png" alt="Logo for Open Movie database API">
-            <img class="logo" src="images/openweather-logo.jpg" alt="Logo for OpenWeather API">
-            <img class="logo" src="images/tmdb-icon.svg" alt="Logo for TMDB API">
-        </div>
-    
+
+    <div id="movie-poster">
+    </div>
+    <div id="movie-trailer">
+    </div>
+    <div id="api-ack">
+        <img class="logo" src="images/omdb-icon.png" alt="Logo for Open Movie database API">
+        <img class="logo" src="images/openweather-logo.jpg" alt="Logo for OpenWeather API">
+        <img class="logo" src="images/tmdb-icon.svg" alt="Logo for TMDB API">
+    </div>
+
 
     <div id="contact-form">
         <form id="filmanseo-form" onsubmit="return sendMail(this);" class="form-group">
@@ -88,6 +94,7 @@
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
         </script>
+        
 
 
 </body>
