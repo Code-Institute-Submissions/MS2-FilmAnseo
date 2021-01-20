@@ -14,6 +14,7 @@
 .fa-bars{
     color: #fafafa;
 }
+
 .navbar-brand{
     font-family: "Bangers", sans-serif;
     padding-right: 20px;
@@ -24,26 +25,28 @@
 .navbar-toggler{
     border: #fafafa;
 }
-.nav-link{
+.nav-link {
     color: #fafafa;
     font-family: "Bangers", sans-serif;
 }
 
 .image-header1{
-    width: 100%;
-    background-image: url("/images/ryans_daughter_headerimage.jpg"); 
+    max-width: 100%;
+    width: auto;
+    background-image: url("/images/skellig-mist.jpg"); 
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    height: 150px;
+    min-height: 300px;
+    height: auto;
 }
 .image-header2{
     width: 100%;
     background-image: url("/images/young-offenders-headerswap.jpg"); 
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover;
-    height: 150px;
+    min-height: 300px;
 }
 #intro{
     display: none;
