@@ -143,7 +143,7 @@ On this post (https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art
 
 screenshot here
 
-Changin g to the following code fixed the issue:
+Changing to the following code fixed the issue:
 ```javascript
 $('body').on('click', '#toggle-button', function () {
      $("#optional-rows").toggle(1000);
@@ -158,13 +158,27 @@ $('#optional-movie-details').on('click', '#toggle-button', function () {
 });
 ```
 
-### Issue with displaying trailer for The Silver Branch
+### Centering the wrapper
+https://stackoverflow.com/questions/8701054/how-to-center-a-wrapper-div-and-not-the-content
+https://css-tricks.com/best-way-implement-wrapper-css/
+
 
 
 
 
 ## Other resources:
 Dot notation (accessing the required data from the weather API): https://www.sitepoint.com/back-to-basics-javascript-object-syntax/
+
+Google maps icon: https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg
+
+OpenWeather logo: https://mebee.info/2019/10/08/post-1670/
+
+Responsive video embed - Bootstrap
+``` HTML
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+</div>
+```
 
 
 
