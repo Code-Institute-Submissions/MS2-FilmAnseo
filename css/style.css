@@ -33,7 +33,7 @@
 .image-header1{
     max-width: 100%;
     width: auto;
-    background-image: url("/images/skellig-mist.jpg"); 
+    background-image: url("../images/skellig-mist.jpg"); 
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -42,7 +42,7 @@
 }
 .image-header2{
     width: 100%;
-    background-image: url("/images/young-offenders-headerswap.jpg"); 
+    background-image: url("../images/young-offenders-headerswap.jpg"); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
