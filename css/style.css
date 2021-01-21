@@ -4,8 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-/*----------------------------------------------------- Header area above the map */ 
+/*----------------------------------------------------- Wrapper */ 
+.wrapper{
+    margin: 0 auto;
+    max-width: 1420px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 /*----------------------------------------------------- Navigation */
 .navbar-dark{
@@ -29,7 +36,7 @@
     color: #fafafa;
     font-family: "Bangers", sans-serif;
 }
-
+/*-----------------------------------------------------------Header Area*/
 .image-header1{
     max-width: 100%;
     width: auto;
@@ -162,17 +169,36 @@ color: #fafafa;
 }
 /*------------------------------------------------------------------------ API Ack*/
 #api-ack{
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
-    justify-items: center;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+   background-color: #000000;
+   color: #fafafa;
+   text-align: center;
+   
 }
+#api-ack h5{
+    font-family: "Bangers", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding-top: 5px;
+}
+
 .logo{
-    width: 75px;
+    width: 100%;
     height: 75px;
+    font-family: "Open Sans";
+    text-align: center;
+    line-height: 70px;
+    align-self: center;
+}
+#omdb-ack{
+    padding-top: 5px;
+    font-size: 2em;
+    font-family: "Open Sans", sans-serif;
+
+}
+.logo img{
+    max-height: 70px;
+    width: auto;
 }
 /*------------------------------------------------------------------------ Contact form*/
 #contact-form{
@@ -184,7 +210,11 @@ color: #fafafa;
 }
 #contact-form h5{
     font-family: "Bangers", sans-serif; 
-    text-align: center;   
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding-top: 5px;   
 }
 #contact-form label{
     font-family: "Open Sans Condensed";
