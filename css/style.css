@@ -100,7 +100,9 @@ color: #fafafa;
     background-color: #e0c963;
     color: black;
     text-align: center;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 #how-it-works p{
     margin-bottom: 0px;
@@ -121,7 +123,7 @@ color: #fafafa;
     text-align: center;
 }
 #weather-details{
-    background-color: #e0c963;
+    background-color: #DDE392;
     color: #000000;
     text-align: center;
     display: none;
@@ -138,19 +140,16 @@ color: #fafafa;
 }
 #toggle-button{
     text-align: center;
-    color: #fafafa;
-    font-family: "Open Sans Condensed", sans-serif;
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
 }
 #toggle-bar{
-    background-color: #7D8570;
+    background-color: #E1E7D4;
     text-align: center;
     height: 50px;
-    color: #fafafa;
     line-height: 50px;
 }
-.table{
-    margin-bottom: 0px;
-}
+
 .container-fluid{
     padding: 0px;
 }
@@ -167,13 +166,32 @@ color: #fafafa;
     width: 100%;
     padding-right: 0px 10px 0px;
 }
+
+/*------------------------------------------------------------------------ Details table*/
+.table{
+    margin-bottom: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+td:first-of-type{
+    width: 30%;
+    text-transform: uppercase;
+}
+.table-default{
+    background-color: #F7F8E4;
+}
+.table-optional{
+    background-color: #EEF1C8;
+}
+
 /*------------------------------------------------------------------------ API Ack*/
 #api-ack{
    background-color: #000000;
    color: #fafafa;
    text-align: center;
-   
+   font-family: "Open Sans", sans-serif;
+   padding-bottom: 10px;
 }
+
 #api-ack h5{
     font-family: "Bangers", sans-serif;
     text-transform: uppercase;

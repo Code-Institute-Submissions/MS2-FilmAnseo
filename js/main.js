@@ -285,7 +285,7 @@ document.getElementById("weather-details").innerHTML =
 function buildOutTable(movie) {
     document.getElementById("movie-details").innerHTML =
         `
-                <table class="table">
+                <table class="table table-default">
         <tr>
             <td>Title</td>
             <td>${movie.Title}</td>
@@ -296,7 +296,7 @@ function buildOutTable(movie) {
         </tr>
         </table>`
     document.getElementById("optional-movie-details").innerHTML =    
-        `<div id="optional-rows"><table class="table" >
+        `<div id="optional-rows"><table class="table table-optional" >
         <tr>
             <td>Released</td>
             <td>${movie.Released}</td>
@@ -396,3 +396,17 @@ $("body").on('click', '#info-option-bar', function(){
 $("body").on('click', '#weather-icon', function(){
     $("#weather-details").toggle(800);
 });
+$("#weather-icon").mouseover(function(){
+    $("#weather-icon").css("background-color", "#AFBE8F");
+  });
+$("#weather-icon").mouseout(function(){
+    $("#weather-icon").css("background-color", "#7D8570");
+  });
+$("#optional-movie-details").on('mouseover', '#toggle-bar', function(){
+    $("#toggle-bar").css("background-color", "#AFBE8F");
+  });
+$("#optional-movie-details").on ('mouseout', '#toggle-bar', function(){
+    $("#toggle-bar").css("background-color", "#7D8570");
+  });
+
+  

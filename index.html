@@ -13,6 +13,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" 
+      type="image/png" 
+      href="images/map-marker-icon.png">
 
     <title>Film Anseo</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
@@ -92,22 +95,25 @@
             <br />
             <label for="message_text">Message</label><br />
             <textarea class="form-control" id="message_text" name="message_text" maxlength="400"
-                placeholder="Max 400 characters" required></textarea>
+                placeholder="Max 400 characters" required></textarea><br />
             <input class="send-button" type="submit" value="Send my message" title="Send us your message" />
         </form>
     </div>
     <div id="api-ack">
+        <h5>About</h5>
+        <p>The Film Anseo site is developed for educational purposes only. Location information is approximate and users are responsible for their own safety in any travel undertaken based on information contained in the map.</p>
         <h5>Acknowledgements</h5>
         <p>This site functions thanks to the following APIs. Thank you to their creators.
         </p>
         <div class="container">
             <div class="row">
-                <div class="col xs-3 logo"><p id="omdb-ack">OMDb API</p></div>
-                <div class="col xs-3 logo"><img  src="images/openweather-logo.png" alt="Logo for OpenWeather API"></div>
-                <div class="col xs-3 logo"><img  src="images/tmdb-icon.svg" alt="Logo for TMDB API"></div>
-                <div class="col xs-3 logo"><img  src="images/google-logo.svg" alt="Logo for Google maps"></div>
-
+                <div class="col xs-6 logo"><p id="omdb-ack">OMDb API</p></div>
+                <div class="col xs-6 logo"><img  src="images/openweather-logo.png" alt="Logo for OpenWeather API"></div>
+                <div class="col xs-6 logo"><img  src="images/tmdb-icon.svg" alt="Logo for TMDB API"></div>
+                <div class="col xs-6 logo"><img  src="images/google-logo.svg" alt="Logo for Google maps"></div>
             </div>
+
+            
         </div>
     </div>
     </div>
