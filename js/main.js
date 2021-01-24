@@ -408,5 +408,8 @@ $("#optional-movie-details").on('mouseover', '#toggle-bar', function(){
 $("#optional-movie-details").on ('mouseout', '#toggle-bar', function(){
     $("#toggle-bar").css("background-color", "#7D8570");
   });
+  $("#filmanseo-form").submit(function(){
+    alert("Your message was sent. Thanks for getting in touch.");
+  });
 
   
