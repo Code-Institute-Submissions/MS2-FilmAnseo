@@ -180,6 +180,19 @@ Responsive video embed - Bootstrap
 </div>
 ```
 
+Style first col of table:
+https://www.w3schools.com/cssref/sel_first-of-type.asp
+
+Favicon error:
+/favicon.ico:1 Failed to load resource: the server responded with a status of 404 ()
+https://www.w3.org/2005/10/howto-favicon
+https://iconarchive.com/show/small-n-flat-icons-by-paomedia/map-marker-icon.html
+
+Show alert after form submitted:
+https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted
+
+
+
 
 
 
