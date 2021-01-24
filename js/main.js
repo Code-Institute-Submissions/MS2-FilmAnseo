@@ -278,8 +278,8 @@ function displayWeatherInfo(weatherInfo){
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
-<p>Temperature (degrees C): ${tempNow}</p>   
-<p>Feels like: ${tempFeelsLike} </p>
+<p>Temperature: ${tempNow}<span>&#8451;</span></p>   
+<p>Feels like: ${tempFeelsLike}<span>&#8451;</span></p>
 <p>Chance of rain in next six hours: </p>
 <p>${rainChance.hour1}% - ${rainChance.hour2}% - ${rainChance.hour3}% - ${rainChance.hour4}% - ${rainChance.hour5}% - ${rainChance.hour6}%</p>
 `
