@@ -269,6 +269,8 @@ function displayWeatherInfo(weatherInfo){
         hour5:parseInt(weatherInfo.hourly[4].pop*100),
         hour6:parseInt(weatherInfo.hourly[5].pop*100),
     };
+    let tempNow = weatherInfo.current.temp;
+    let tempFeelsLike = weatherInfo.current.feels_like;
     document.getElementById("weather-icon").innerHTML =
 `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
@@ -276,6 +278,8 @@ function displayWeatherInfo(weatherInfo){
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
+<p>Temperature (degrees C): ${tempNow}</p>   
+<p>Feels like: ${tempFeelsLike} </p>
 <p>Chance of rain in next six hours: </p>
 <p>${rainChance.hour1}% - ${rainChance.hour2}% - ${rainChance.hour3}% - ${rainChance.hour4}% - ${rainChance.hour5}% - ${rainChance.hour6}%</p>
 `
