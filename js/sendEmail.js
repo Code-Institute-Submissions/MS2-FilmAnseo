@@ -6,13 +6,18 @@ add_film: contactForm.film_add_name.value,
 add_location: contactForm.film_add_location.value,
 add_message: contactForm.message_text.value,
 })
-    .then( 
+      .then(
        function(response){
            console.log("Successful", response);
        },
        function(error){
-          console.log("Failed", error);
-       });
-       return false;
+          console.log("Failed", error);  
+       })
+       .then( 
+         function (){
+           document.getElementById("filmanseo-form").reset(); 
+        })
+       ;
+       return false; 
 }
 
