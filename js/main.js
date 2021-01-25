@@ -75,7 +75,7 @@ let markers = [
         id: "tt0064505"
     },
     {
-        coords: { lat: 52.9734372, lng: -9.4395077 },
+        coords: { lat: 52.983474, lng: -9.4664167 },
         content: `<h3>The Princess Bride</h3>
                     <p>Cliffs of Moher</p>
                     `,
@@ -270,7 +270,9 @@ function displayWeatherInfo(weatherInfo){
         hour6:parseInt(weatherInfo.hourly[5].pop*100),
     };
     let tempNow = weatherInfo.current.temp;
+    let tempNowShow = tempNow.toFixed();
     let tempFeelsLike = weatherInfo.current.feels_like;
+    let tempFeelsLikeShow = tempFeelsLike.toFixed();
     document.getElementById("weather-icon").innerHTML =
 `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
@@ -278,8 +280,8 @@ function displayWeatherInfo(weatherInfo){
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
-<p>Temperature: ${tempNow}<span>&#8451;</span></p>   
-<p>Feels like: ${tempFeelsLike}<span>&#8451;</span></p>
+<p>Temperature: ${tempNowShow}<span>&#8451;</span></p>   
+<p>Feels like: ${tempFeelsLikeShow}<span>&#8451;</span></p>
 <p>Chance of rain in next six hours: </p>
 <p>${rainChance.hour1}% - ${rainChance.hour2}% - ${rainChance.hour3}% - ${rainChance.hour4}% - ${rainChance.hour5}% - ${rainChance.hour6}%</p>
 `
