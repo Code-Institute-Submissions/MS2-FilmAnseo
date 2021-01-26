@@ -1,6 +1,6 @@
 #MS2 - Film Anseo
 
-anseo, adv. Here, in this place. Fan, tar, ~, stay, come, here. Fág ~ é, leave it here. Abhus ~, over here. Cé atá ~? Who is here? Who is this? Ár seal ~, our time here, in this life.
+*anseo*, adv. Here, in this place. 
  - teanglann.ie
 
 Film Anseo (Film Here) - This is my MS2 project - a responsive web app for movie lovers visiting or living in Ireland who may like to visit locations where famous movies have had scenes shot.
@@ -12,24 +12,24 @@ The purpose of the site is to be a quick and easy look into the Irish landscape 
 The site aims to be simple and quick to use with a mobile-first design approach. It may not always have the full attention of the user so it whould be clutter free and straighforward. It should have an upbeat, adventurous feel that aligns with people on holidays or taking an outing.
 At the same time, it should have enough informational value to keep a user engaged or to make return visits worth their while.
 Becasue the site is intuitive and straighforward, any instructional content that a user might want to consult on their first visit should be easy for them to ignore on subsequent visits.
-The direction of travel on the site is map -> movie, not the other way around (there is no functinality to search for a movie, for example). Therefore, the map is the central focus.
+The direction of travel on the site is map -> movie, not the other way around (there is no functinality to search for a movie, for example). Therefore,the map is the central focus.
 
-### Target Audience/User Stories
-A group of tourists sitting at a cafe table after lunch wondering where they'll go for the afternoon. They can view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
-A tourist/visitor who has been impressed with their visit to a location and would like to keep the experience alive by following up with some connected activity. For example, after visiting the Cliffs of Moher, they check the app and then decide to watch Princess Bride on the bus ride back to Dublin.
-A group of friends spending some together for a weekend and looking for a diversion. The app serves as a source of valuable location-specific weather info and also as a talking point.
-A film fan browsing for trivia and planning a road trip.
-A local tourist office who would like to highlight another claim to fame of their locality. They can easily send a message to the site curator to add a film. 
+## Target Audience/User Stories
+*A group of tourists sitting at a cafe table after lunch wondering where they'll go for the afternoon. They can view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
+*A tourist/visitor who has been impressed with their visit to a location and would like to keep the experience alive by following up with some connected activity. For example, after visiting the Cliffs of Moher, they check the app and then decide to watch Princess Bride on the bus ride back to Dublin.
+*A group of friends spending some together for a weekend and looking for a diversion. The app serves as a source of valuable location-specific weather info and also as a talking point.
+*A film fan browsing for trivia and planning a road trip.
+*A local tourist office who would like to highlight another claim to fame of their locality. They can easily send a message to the site curator to add a film. 
 
 
 ### Wireframe Mockups
 
 ### Color Palette
 
-Thinking about colurs, my main aim is to:
-Have a sense of the cinema (that is, black) surrounfing the trailer and perhaps elsewhere, mimicking movie credits.
+Thinking about colours, my main aim is to:
+Have a sense of the cinema (that is, black) surrounding the trailer and perhaps elsewhere, mimicking movie credits.
 Incorporate green as the color most associated with the Irish landscape.
-Have upbeat colours that add to a sense of fun in the site withou feeling childish or undermining the information.
+Have upbeat colours that add to a sense of fun in the site without feeling childish or undermining the information.
 
 https://imagecolorpicker.com/
 
@@ -59,8 +59,8 @@ A trailer or some other promotional clip is an important aspect of the iformatio
 The list of film on the map is obviously incomplete. The contact form gives the option to users to provide information about movies that are not already on the map or to provide any other feedback. 
 The contact form sends an email using EMailJS, as shown in the example here:
 
-#### Header Image
-The site features a header image that reflects several of the site's underlying design decisions - 
+#### Hero Image
+The site features a hero image of the Irish coastal landscape that reflects several of the site's underlying design decisions - 
 It is not tied to any specific place/time and hints at a sort of poetic landscape open to becoming something else in a filmic world.
 It displays the beauty of the location - ie an island in the north Atlantic.
 It has a cinematic feel.
@@ -74,6 +74,8 @@ Form is working and sends a message as follows:
  
  Add Image Here
 
+### Navigation and logo
+The site has a navigation bar that includes a hamburger icon (links to the contact form and about sections of the page). It also contains the site title and an icon (marker) that immediately helps to explain the site purpose.
 
 ### Features to implement in the future
 For the next iteration of the site, the following features would be implemented:
@@ -82,7 +84,7 @@ More markers and perhaps a separate set of markers for TV series.
 
 ## Technologies Used
 
-The site skeleton is quite simple. There is a basic HTML page containing a series of divs. There is some static content in the header navigation area and the acknowledgements section at the botto of the page, but most of the content is populated dynamically using the API responses and jQuery. 
+The site skeleton is quite simple. There is a basic HTML page containing a series of divs. There is some static content in the header navigation area and the acknowledgements section at the bottom of the page, but most of the content is populated dynamically using the API responses and jQuery. 
 
 APIs: Google Maps, OMDB, TMDB, JSMail
 
@@ -197,6 +199,18 @@ parseInt() - https://www.w3schools.com/jsref/jsref_parseint.asp#:~:text=The%20pa
 ### How to show degrees C symbol
 https://www.toptal.com/designers/htmlarrows/symbols/degree-celsius/
 
+### How to allow for a responsive trailer size appropriate to the device
+This was very straightforward with [Bootstrap](https://getbootstrap.com/docs/4.0/utilities/embed/):
+``` HTML
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+</div>
+```
+### How to style the first cell in each row of the table
+This was achieved using CSS first-of-type selector:
+https://www.w3schools.com/cssref/sel_first-of-type.asp
+
+
 ## Other resources:
 Dot notation (accessing the required data from the weather API): https://www.sitepoint.com/back-to-basics-javascript-object-syntax/
 
@@ -204,15 +218,7 @@ Google maps icon: https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg
 
 OpenWeather logo: https://mebee.info/2019/10/08/post-1670/
 
-Responsive video embed - Bootstrap
-``` HTML
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-</div>
-```
 
-Style first col of table:
-https://www.w3schools.com/cssref/sel_first-of-type.asp
 
 Favicon error:
 /favicon.ico:1 Failed to load resource: the server responded with a status of 404 ()
