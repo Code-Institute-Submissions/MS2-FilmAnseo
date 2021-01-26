@@ -121,7 +121,7 @@ color: #fafafa;
 /*------------------------------------------------------------------------ Weather info section*/
 
 #weather-icon{
-    background-color: #7D8570;
+    background-color: #e0c963;
     color: #fafafa;
     text-align: center;
 }
@@ -245,9 +245,18 @@ td:first-of-type{
 }
 /*------------------------------------------------------------------------ Footer*/
 footer{
-    height: 50px;
-    text-align: center;
+    height: 100px;
+    background-color: #000000;
+    color: #fafafa;
     font-family: "Open Sans", sans-serif;
     flex-shrink: 0;
+    text-align: center;
+}
+footer a{
+    color: #fafafa;
+    text-decoration: none;
+}
+gh-logo{
+    padding: 0px 10px 0px;
 }
 
