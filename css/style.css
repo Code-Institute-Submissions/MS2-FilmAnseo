@@ -251,12 +251,17 @@ footer{
     font-family: "Open Sans", sans-serif;
     flex-shrink: 0;
     text-align: center;
+    border-top: #e0c963 1px solid;
+
 }
 footer a{
     color: #fafafa;
     text-decoration: none;
 }
-gh-logo{
+.gh-logo{
     padding: 0px 10px 0px;
+}
+footer small{
+    padding-top: 8px;
 }
 
