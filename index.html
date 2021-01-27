@@ -45,11 +45,7 @@
     </ul>
   </div>  
 </nav>
-<aside id="anseo-translate"><p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio-icon" class="fas fa-volume-up" onclick="playAudio()"></i></p><audio id="anseo-audio">
-  <source src="audio/anseo-pron.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio></aside>
-    
+
     <div id="image-header" class="image-header1"></div>
     <div id="intro">
         <blockquote class="quote-line1" cite="https://www.imdb.com/title/tt4714568/?ref_=tt_ch">There are two things you
@@ -63,11 +59,12 @@
     </div>
     <div id="how-it-works">
         <p>The map shows locations in Ireland where famous or award-winning films have been shot - </p>
-        <p>or at least had some scenes shot.</p><br />
-        <p>Click a marker to get the movie name and basic info.</p>
-        <p>Scroll down to see more details or watch the trailer.</p>
-        <p>Click the weather icon to see the weather info.</p><br />
-        <p>Maybe it helps you plan a movie-lovers day out!</p>
+        <p>or at least had some scenes shot!</p><br />
+        <p>To get started, click a marker to get the movie name and basic location info.</p>
+        <p>Click the weather icon to see more weather info for the selected location today.</p>
+        <p>For movie info, scroll down to see more details or watch the trailer.</p><br />
+        
+        <p>Maybe it helps you plan a movie-lovers day out!</p><br />
     </div>
     <div id="map">
     </div>
@@ -106,6 +103,11 @@
     </div>
     <div id="api-ack">
         <h5>About</h5>
+        <p><aside id="anseo-translate"><p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio-icon" class="fas fa-volume-up" onclick="playAudio()"></i></p><audio id="anseo-audio">
+  <source src="audio/anseo-pron.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio></aside>
+        </p>
         <p>The Film Anseo site is developed for educational purposes only. Location information is approximate and users are responsible for their own safety in any travel undertaken based on information contained in the map.</p>
         <h5>Acknowledgements</h5>
         <p>This site functions thanks to the following APIs. Thank you to their creators.
@@ -131,7 +133,7 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
-    <script src="js/audio.js"></script>
+    <script src="js/audio.js"></script> 
 
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
