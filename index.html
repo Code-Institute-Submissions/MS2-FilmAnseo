@@ -45,7 +45,10 @@
     </ul>
   </div>  
 </nav>
-<aside id="anseo-translate"><p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio" class="fas fa-volume-up"></i></p></aside>
+<aside id="anseo-translate"><p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio-icon" class="fas fa-volume-up" onclick="playAudio()"></i></p><audio id="anseo-audio">
+  <source src="audio/anseo-pron.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio></aside>
     
     <div id="image-header" class="image-header1"></div>
     <div id="intro">
@@ -128,6 +131,7 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
+    <script src="js/audio.js"></script>
 
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB893omyX6PxhHFA2Uxm0bjUxtHmcyjPAY&callback=initMap">
