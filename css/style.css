@@ -39,6 +39,12 @@
     color: #fafafa;
     font-family: "Bangers", sans-serif;
 }
+/*-----------------------------------------------------------Translation Area*/
+#anseo-translate{
+text-align: center;
+background-color: #e0c963;
+color: #000000;
+}
 /*-----------------------------------------------------------Header Area*/
 .image-header1{
     max-width: 100%;
