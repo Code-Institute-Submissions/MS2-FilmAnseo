@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 //Global variables
 let activeInfoWindow;
 let idForSearch;
@@ -181,7 +183,7 @@ function initMap() {
         },
         disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.TERRAIN //Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
-    }
+    };
 
 
     let map = new google.maps.Map(document.getElementById("map"), options);
@@ -224,15 +226,15 @@ function loadMovieDetails() {
             if (this.readyState == 4 && this.status == 200) {
                 let data = this.responseText;
                 let jsonData = JSON.parse(data);
-                let movieArray = Object.entries(jsonData);
+                // let movieArray = Object.entries(jsonData);
                 //console.log(movieArray);
                 console.log(jsonData);
                 buildOutTable(jsonData);
                 buildOutPosterDiv(jsonData);
                 buildOutTrailerDiv(idForSearch);
                 buildOutWeatherDiv(weatherCoords);
-            };
-        }
+            }
+        };
         xhttp.open("GET", OMDBUrl, true);
         xhttp.send();
 
@@ -251,8 +253,8 @@ function buildOutWeatherDiv(weatherCoords){
                         let jsonWeather = JSON.parse(weatherInfo);
                         console.log(jsonWeather);
                         displayWeatherInfo(jsonWeather);
-                    };
-                }
+                    }
+                };
                 xhttp.open("GET", weatherSearch, true);
                     xhttp.send();
 }
@@ -276,7 +278,7 @@ function displayWeatherInfo(weatherInfo){
     document.getElementById("weather-icon").innerHTML =
 `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
-`
+`;
 document.getElementById("weather-details").innerHTML =
 `
 <p>Weather today at this location: ${weatherDescription}</p>
@@ -284,7 +286,7 @@ document.getElementById("weather-details").innerHTML =
 <p>Feels like: ${tempFeelsLikeShow}<span>&#8451;</span></p>
 <p>Chance of rain in next six hours: </p>
 <p>${rainChance.hour1}% - ${rainChance.hour2}% - ${rainChance.hour3}% - ${rainChance.hour4}% - ${rainChance.hour5}% - ${rainChance.hour6}%</p>
-`
+`;
 }
 
 // Use the movie details returned by loadMovieDetails() to populate movie details table
@@ -300,7 +302,7 @@ function buildOutTable(movie) {
             <td>Plot</td>
             <td>${movie.Plot}</td>
         </tr>
-        </table>`
+        </table>`;
     document.getElementById("optional-movie-details").innerHTML =    
         `<div id="optional-rows"><table class="table table-optional" >
         <tr>
@@ -351,13 +353,13 @@ function buildOutTable(movie) {
     </table>
     </div>
     <div id="toggle-bar"><p id="toggle-button">Show More / Show Less</p></div>
-                `
+                `;
 }
 
 // Use the movie details returned by loadMovieDetails() to populate the poster div 
 function buildOutPosterDiv(movie) {
     document.getElementById("movie-poster").innerHTML =
-        `<div class="poster"><img src=${movie.Poster}/></div>`
+        `<div class="poster"><img src=${movie.Poster}/></div>`;
 }
 
 // Use the movie details returned by loadMovieDetails() to get the youtube url for trailer (uses TMDB API)
@@ -372,8 +374,8 @@ function buildOutTrailerDiv(SearchID) {
                         //console.log(jsonTrailer.results[0].key);
                         youtubeTrailerId = jsonTrailer.results[0].key;
                         displayTrailer(youtubeTrailerId);
-                    };
-                }
+                    }
+                };
                 xhttp.open("GET", trailerSearch, true);
                     xhttp.send();
             }
@@ -384,7 +386,7 @@ function displayTrailer(youtube){
     document.getElementById("movie-trailer").innerHTML =
                     `<div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${youtube}"  allowfullscreen></iframe>
-                    </div>`
+                    </div>`;
             }
 
 
@@ -396,7 +398,7 @@ $('#optional-movie-details').on('click', '#toggle-bar', function () {
 $("body").on('click', '#info-option-bar', function(){
     $('#how-it-works').toggle(800);
     $('#intro').toggle(800);
-    $('#image-header').toggleClass('image-header2')
+    $('#image-header').toggleClass('image-header2');
     $('#your-responsibility-text').toggle(800);                 
 });
 $("body").on('click', '#weather-icon', function(){

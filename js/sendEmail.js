@@ -1,3 +1,6 @@
+/*jshint esversion: 6*/
+//Send email using JSMail template, report success on console and clear the form. Tested ok.
+
 function sendMail(contactForm){
     emailjs.send("service_xm6go8k","template_bk2ro5o",{
 from_name: contactForm.name.value,
