@@ -35,15 +35,23 @@
 .navbar-toggler{
     border: #fafafa;
 }
-.nav-link {
+.nav-link a{
     color: #fafafa;
     font-family: "Bangers", sans-serif;
 }
 /*-----------------------------------------------------------Translation Area*/
 #anseo-translate{
+height: 50px;
 text-align: center;
 background-color: #e0c963;
 color: #000000;
+font-family: "Open Sans", sans-serif;
+}
+#anseo-translate span{
+    font-style: italic;
+}
+#anseo-translate p{
+    padding-top: 10px;
 }
 /*-----------------------------------------------------------Header Area*/
 .image-header1{
@@ -265,7 +273,7 @@ footer a{
     text-decoration: none;
 }
 .gh-logo{
-    padding: 0px 10px 0px;
+    padding: 5px 10px 15px;
 }
 footer small{
     padding-top: 8px;
