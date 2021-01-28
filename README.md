@@ -1,7 +1,6 @@
 #MS2 - Film Anseo
 
 *anseo*, adv. Here, in this place. 
- - teanglann.ie
 
 Film Anseo (Film Here) - This is my MS2 project - a responsive web app for movie lovers visiting or living in Ireland who may like to visit locations where famous movies have had scenes shot.
 
@@ -22,11 +21,11 @@ The direction of travel on the site is map -> movie, not the other way around (t
 *A local tourist office who would like to highlight another claim to fame of their locality. They can easily send a message to the site curator to add a film. 
 
 
-### Wireframe Mockups
+### Wireframe 
+The [wireframe](wireframes/wireframe.pdf) served as a general guiding principle for the design but was not followed exactly.
 
 ### Color Palette
-
-Thinking about colours, my main aim is to:
+Thinking about colours, my main aim was to:
 Have a sense of the cinema (that is, black) surrounding the trailer and perhaps elsewhere, mimicking movie credits.
 Incorporate green as the color most associated with the Irish landscape.
 Have upbeat colours that add to a sense of fun in the site without feeling childish or undermining the information.
@@ -35,7 +34,7 @@ https://imagecolorpicker.com/
 
 ## Features
 #### Map
-The map is the focus of the site and sits directly in front of the user the moment they land on the page. The zoom level is appropriate that they can quickly see the entire country and choose markers in any area - where they are, where they were, or where they intend to be.
+The map is the focus of the site and sits directly in front of the user, below the hero image, the moment they land on the page. The zoom level is appropriate that they can quickly see the entire country and choose markers in any area - where they are, where they were, or where they intend to be.
 The map functionality is provided by the Google Maps JavaScript API.
 The map uses the familiar default Google markers but displays the 'terrain' view - deempahsizing roads and everyday locations to allow the focus to be on the landscape and the imaginative world of film.
 When clicked the map markers open an infowindow displaying only the fil title and the name of the location. The rest of the film data is contained in the main body of the page.
@@ -69,26 +68,91 @@ It has a cinematic feel.
 The call to action is presented in the map instructions. The poetic, misty cinematic image of the Skelligsswitches abruptly to the more mischievous and energising image and quote from the young offenders. The quote lends a further sennse of adventure and whimsical mischief to the site and helps it to be a fun engagement by itself, without any follow-on action.
 
 ### Contact
-Working contact form based on the 'Sending Emails Using EMailJS" lesson in interactive frontend module.
-Form is working and sends a message as follows:
+The list of films on the map is obviously incomplete and dynamic new films being potentially added on a regular basis. The contact form gives the option to users to provide information about movies that are not already on the map or to provide any other feedback. 
+The contact form sends an email using EMailJS, as shown in the example here. The contact form is based on the 'Sending Emails Using EMailJS" lesson in interactive frontend module.
  
- Add Image Here
+![Email sent from contact form](/images/readme/emailjs-result.png)
 
 ### Navigation and logo
 The site has a navigation bar that includes a hamburger icon (links to the contact form and about sections of the page). It also contains the site title and an icon (marker) that immediately helps to explain the site purpose.
+
+### Audio
+Toursits are one of th target audiences of the site. They (as well as many Irish people) will not be familiar with the meaning or pronunciation of the word 'anseo'. If the meaning is not already clear from the various site elements and the How to Use the Map instructions, a translation of anseo and an audio clip with its pronunciation is included in the About section of the page. 
 
 ### Features to implement in the future
 For the next iteration of the site, the following features would be implemented:
 Directions to a marker from the user's location.
 More markers and perhaps a separate set of markers for TV series.
 
-## Technologies Used
+## Main Langauages, Frameworks, Technologies Used
+* HTML
+    * Basic skelton of the site structure / Layout of elements
+    * Semantic markup (eg, nav, aside, footer)
+    * In main.js to facilitate the generation of the dynamic sections of the page
 
-The site skeleton is quite simple. There is a basic HTML page containing a series of divs. There is some static content in the header navigation area and the acknowledgements section at the bottom of the page, but most of the content is populated dynamically using the API responses and jQuery. 
+* CSS
+    * Styling of the page - colour, fonts, layout fine tuning
+    * Aiding interaction and clarity of purpose (eg. cursor:pointer to show presence of a clickable element)
+    * Allowing the page to load without empty sections before any marker is clicked. This was achieved using display:none which is overridden by jQuery when a user clicks a marker or other interactive page element.
+    * Interactivity (together with jQuery) - for example, switching the class of a div to change the background image.
 
-APIs: Google Maps, OMDB, TMDB, JSMail
+* JavaScript
+    * The main interactive functionality of the site is achieved using JS. Functions are used to manipulate and display data returned by APIs, play audio, send emails.
+    * The jQuery library is used to achive interactivity on user actions, for example by toggling the display of additional information.
+    * jQuery is also used to aid in selecting DOM elements and change their appearance or content.
+    
+     
+* XMLHttpRequest (XHR)
+    XHR is used to interact with the API services and get the relevant data.
+    Useful info/practice taken from: 
+    * [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+    * [W3Schools](https://www.w3schools.com/xml/xml_http.asp)
 
-## Additional Resources
+* EmailJS is used to make the contact form function. see Contact Form section above.
+Main resources for this section:
+    * Interactive frontend module
+    * EmailJS [documentation](https://www.emailjs.com/docs/)
+
+* Bootstrap is used for:
+    * The navbar dropdown
+    * Basic styling of the table containing the move info
+    * Basic styling of the contact form
+    * Responsive sizing of the div containing the trailer (youtube)
+    * Responsive arrangement/layout of elements in the Acknowledgements section
+
+## APIs and Related Resources
+* Google Maps JavaScript API is used to display and populate the map with markers.
+Main resources for making this functional:
+    * Interactive frontend module 
+    * Brad Traversy [tutorial](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=5s&ab_channel=TraversyMedia)
+    * Google [documentation](https://developers.google.com/maps/documentation/javascript/overview)
+
+* OMDB 
+    * [OMDB API](http://www.omdbapi.com/) provides the movie data presented in the table and the poster link.
+
+* TMDB API 
+    * The link for the trailers on youtube are created using a key returned by the [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction)
+
+* Open Weather API
+    * Weather data presented on the site is supplied by the [Open Weather API](https://openweathermap.org/api)
+
+
+## Additional Resources:
+[Font Awesome](https://fontawesome.com/) is used for icons
+[Google Fonts](https://fonts.google.com/) is used for fonts
+[TinyJPG](https://tinyjpg.com/) is used for image compression
+
+## Testing Resources
+JavaScript validated using [JSHint](https://jshint.com/about/)
+HTML validated using the [W3C markup validation service](https://validator.w3.org/)
+CSS validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
+
+Responsiveness tested/checked using: 
+* [Responsinator](https://www.responsinator.com/)
+* [Google mobile friendly test](https://search.google.com/test/mobile-friendly)
+
+Accessibility
+* https://www.webaccessibility.com/
 
 
 ## Main Issues Overcome
