@@ -157,20 +157,6 @@ Accessibility
 
 ## Main Issues Overcome
 
-### Restrict Googlemaps InfoWindows to One
-Via the DOM, the infowindow provides the base information (ID) for the selected movie so it is important that only a single infowindow be open at any one time. I had some issues implementing this at first but it was finally resolved by setting the infowindow as active infowindow and then closing the 'active' info window when a marker is clicked: 
-```javascript
-if (activeInfoWindow) { activeInfoWindow.close(); }
-[...]
-infowindow.open(map, marker);
-activeInfoWindow = infowindow;
-```
-Resource: 
-https://stackoverflow.com/questions/35428563/how-to-close-all-infowindow-of-markers-on-the-map?rq=1
-Also consulted: 
-https://support.advancedcustomfields.com/forums/topic/google-map-infowindow-close/
-https://hashnode.com/post/google-maps-api-onclick-on-marker-close-infowindow-of-other-markers-ciou68dw708x33353les71nyi
-
 ### How to access the ID for the movie
 The IMDb ID is the central piece of info to allow the API to return results for a particular movie. My problem was how to link the key for a specific move with a specific marker so that the correct API request was sent for the marker.
 Initially, I included the key as innerHTML in a hidden "<p>" element in the InfoWindow content. However, this seemed like a clumsy approach and was confirmed as such by my mentor who advised providing a property in the marker object to hold this info rather than the HTML. This was an easy fix and once identified I could simply reassign the idForSearch variable:
@@ -209,7 +195,7 @@ Because there is quite a bit of data used to populate the HTML divs, the code wa
 This was resolved by separating the build out of the HTML sections to separate functions. The HTML was set up using template literals.
 Excellent resource that served as the base for this approach: https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s
 
-## How to Open map in terrain Mode by Default
+## How to Open map in Terrain Mode by Default
 The hybrid mode in which the map opens is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the color scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
 To open in terrain mode by default, added the following code to the initmap() function:
 ```JavaScript
@@ -231,6 +217,7 @@ Is the issue with CSS (display: none)? - no, seemed like jQuery show() method sh
 Is it an issue with placement of the jQuery file? - checked fine
 Is it an issue with '$' - replaced that with 'jQuery', no better.
 Checked jQuery debugging strategy outlined here: https://www.simonbattersby.com/blog/debugging-jquery-a-beginners-guide/
+
 On this post (https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art044), checking the DOM for an event listener on the selector was mentioned. I did that and found that there was nothing being listened for:
 
 screenshot here
@@ -274,6 +261,13 @@ This was very straightforward with [Bootstrap](https://getbootstrap.com/docs/4.0
 This was achieved using CSS first-of-type selector:
 https://www.w3schools.com/cssref/sel_first-of-type.asp
 
+### How to Improve Contact Form Functionality with Confirmation and Reset
+Initial testing of the form showed it to be working but not giving any indication to the user that it was working. This was improved by showing an alert on submit and also resetting/clearing the form.
+
+Resources:
+[Stack Overflow for Show Alert](https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted)
+
+
 
 ## Other resources:
 Dot notation (accessing the required data from the weather API): https://www.sitepoint.com/back-to-basics-javascript-object-syntax/
@@ -282,12 +276,6 @@ Google maps icon: https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg
 
 OpenWeather logo: https://mebee.info/2019/10/08/post-1670/
 
-
-
-Favicon error:
-/favicon.ico:1 Failed to load resource: the server responded with a status of 404 ()
-https://www.w3.org/2005/10/howto-favicon
-https://iconarchive.com/show/small-n-flat-icons-by-paomedia/map-marker-icon.html
 
 Show alert after form submitted:
 https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted

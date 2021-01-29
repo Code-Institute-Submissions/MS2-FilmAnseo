@@ -63,4 +63,52 @@ Validation tool: Direct input at https://validator.w3.org/#validate_by_input
 As of Jan 27, one warning repeated 4 times remains:
 "The type attribute is unnecessary for JavaScript resources."
 
-## Mobile-Friendly
+## Console Errors
+Checking the console for errors initially revealed the following:
+![Missing Favicon](../images/readme/missing-favicon.png)
+Some research showed this to be coming from a missing favicon. It was resolved by adding the following code to the head of index.html:
+```HTML
+<link rel="icon" 
+      type="image/png" 
+      href="images/map-marker-icon.png">
+```
+The icon itself was sourced from [IconArchive](https://iconarchive.com/show/small-n-flat-icons-by-paomedia/map-marker-icon.html)
+
+Resources consulted:
+* [Stack Overflow](https://stackoverflow.com/questions/39149846/why-am-i-seeing-a-404-not-found-error-failed-to-load-favicon-ico-when-not-usin)
+* [W3.org](https://www.w3.org/2005/10/howto-favicon)
+* [Stack Overflow](https://stackoverflow.com/questions/43904246/can-i-use-a-fontawesome-character-as-favicon-in-xhtml)
+
+Currently, console is showing no errors on initial page load or during the user interaction.
+
+## Testing Contact Form Functionality
+It took me a little bit of time to get the contact form working as I wanted but trial and error and lots of test messages later, it is working as intended. Functionality has been tested on several broswers on mobile and desktop device.
+See Issues Overcome in main README for details on the issue of form refresh.
+
+## Testing the Map Functionality
+An issue found early on when testing the map was that when clicking a second or third marker, the information displayed was a repeat of the output for previous marker clicked. Essentially, there wasn't a clean break between one marker click and the next. 
+After researchingthe issue, I resolved it by setting the infowindow as active infowindow and then closing the 'active' info window when a marker is clicked: 
+```javascript
+if (activeInfoWindow) { activeInfoWindow.close(); }
+[...]
+infowindow.open(map, marker);
+activeInfoWindow = infowindow;
+```
+Resource: 
+* [Stack Overflow re infoWindow](ttps://stackoverflow.com/questions/35428563/how-to-close-all-infowindow-of-markers-on-the-map?rq=1)
+
+Also consulted: 
+* https://support.advancedcustomfields.com/forums/topic/google-map-infowindow-close/
+* https://hashnode.com/post/google-maps-api-onclick-on-marker-close-infowindow-of-other-markers-ciou68dw708x33353les71nyi
+
+## Testing API Functionality
+After getting a handle on the API responses and the dot notation required to access the required information, the focus of testing was:
+* Is the correct info returned for each movie?
+* Is the weather data correct per location?
+* If the page is displaying information for one location/movie and the user then clicks another marker in the map, does the info update correctly (weather for the new location and data for the new movie).
+
+The process for this was manual testing.
+
+Issue found:
+
+When the details for a location/movie are shown and the user then clicks another location, the trailer does not update if no trailer key is found in the response from the TMDB API for the second movie. That is, the trailer for the previous movie selected is still shown. After figuring out that the issue here was not a problem with the API itself but rather with the data maintained for a movie, the obvious solution was to contribute the missing data to TMDB. This was not required for any mainstream movies but Man of Aran and The Silver Branch were both wwithout any video content on the TMDB API until it was added by providing relevant youtube links. 
