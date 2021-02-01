@@ -14,11 +14,12 @@ Becasue the site is intuitive and straighforward, any instructional content that
 The direction of travel on the site is map -> movie, not the other way around (there is no functinality to search for a movie, for example). Therefore,the map is the central focus.
 
 ## Target Audience/User Stories
-*A group of tourists sitting at a cafe table after lunch wondering where they'll go for the afternoon. They can view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
-*A tourist/visitor who has been impressed with their visit to a location and would like to keep the experience alive by following up with some connected activity. For example, after visiting the Cliffs of Moher, they check the app and then decide to watch Princess Bride on the bus ride back to Dublin.
-*A group of friends spending some together for a weekend and looking for a diversion. The app serves as a source of valuable location-specific weather info and also as a talking point.
-*A film fan browsing for trivia and planning a road trip.
-*A local tourist office who would like to highlight another claim to fame of their locality. They can easily send a message to the site curator to add a film. 
+* I am among a group of tourists sitting at a cafe table after lunch wondering where we'll go for the afternoon. After finding the site, we can easily view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
+* As a first-time user of the site, the information required to use the map and understand what is being presented is clearly accessible.
+* As a repeat user of the site, I do not need to consult the directions of how to interact with the site. The information that is acessible for a first-time user does not impinge on my use of the map - ie the info can easily be ignored.
+* As a tourist/visitor who has been impressed with their visit to a location, I would like to keep the experience alive by following up with some connected activity. For example, after visiting the Cliffs of Moher, I can check the site and then decide to watch Princess Bride on the bus ride back to Dublin.
+* As a group of friends spending time together for a weekend and looking for a diversion, the site serves as a source of valuable location-specific weather info and also as a talking point.
+* As an administrator at a local tourist office, I can easily get in touch with the site curator to highlight a movie made in the vicinity, thus adding to the list of local tourist attractions.
 
 
 ### Wireframe 

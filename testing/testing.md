@@ -1,3 +1,27 @@
+## Testing User Stories 
+The main criteria for used for testing the overall fuctinality of the site are the user stories. A quick not on whether the criteria are met for each user story follows:
+* I am among a group of tourists sitting at a cafe table after lunch wondering where we'll go for the afternoon. After finding the site, we can easily view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
+    * I think the criteria for this user story are met. The film and weather data is working and accessibly presented. Points for improvement might be:
+        * A longer list of films
+        * Integrate directions or public transport finder Functionality
+        * Where applicable, integrate additional local trivia related to the filming of the movie - eg every night after filming the actors used to go for a drink in a particular local pub that now has a whole wall of related items and photos
+
+* As a first-time user of the site, the information required to use the map and understand what is being presented is clearly accessible.
+    * The How To Use The Map section is clearly visible on the page when a user arrives on the site. The information there is clear and at the same time can be easily hidden once the user no longer requires it. Once hidden, the information does not continue to negatively impact user experience.
+    * The weather icon is clearly visible and the presence of additional info is clearly demonstrated by use of color (toggle) and cursor change.
+    * The weather info itself is clealry laid out and easy to consume.
+    * Likewise, the presence of additional movie info is clealry illustrated by text (Show More), color toggle, and cursor change.
+
+* As a repeat user of the site, I do not need to consult the directions of how to interact with the site. The information that is acessible for a first-time user does not impinge on my use of the map - ie the info can easily be ignored.
+    * As a return visitor, I fond the site layout to be clean and any instructional info is hidden. The map is the central focus.
+
+* As a tourist/visitor who has been impressed with their visit to a location, I would like to keep the experience alive by following up with some connected activity. For example, after visiting the Cliffs of Moher, I can check the site and then decide to watch Princess Bride on the bus ride back to Dublin.
+    * Repeat of point 1 above. 
+* As a group of friends spending time together for a weekend and looking for a diversion, the site serves as a source of valuable location-specific weather info and also as a talking point.
+    * OK - same functionality as 1 above.
+* As an administrator at a local tourist office, I can easily get in touch with the site curator to highlight a movie made in the vicinity, thus adding to the list of local tourist attractions.
+    * The Contact area of the site is easily accessible by scrolling or by using the navigation option. The form itself offers scope to give information relevant to a film or to add a free text message with additional info, a corrections etc. The form gives user feedback if required elements are not provided or not provided in a valid format (eg email). Similarly, the form gives user feedback (alert, must be confirmed) on successsful submisison of the message and then clears the form for a clean user experience.  
+
 ## Manual test for overlapping locations
 The Cliffs of Moher had 2 films listed. Using the same location details for both meant that only one marker displayed.
 Resolution - move one marker slightly.
