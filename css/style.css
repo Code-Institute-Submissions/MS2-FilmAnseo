@@ -197,8 +197,8 @@ td:first-of-type{
 #anseo-translate{
 height: 40px;
 text-align: center;
-background-color: #e0c963;
-color: #000000;
+background-color: #000000;
+color: #fafafa;
 font-family: "Open Sans", sans-serif;
 }
 #anseo-translate span{
@@ -214,7 +214,7 @@ font-family: "Open Sans", sans-serif;
     padding: 5px 10px;
     font-style: italic;
     cursor: pointer;
-    color: #7D8570;
+    color: #e0c963;
 }
 /*------------------------------------------------------------------------ API Ack*/
 #api-ack{
@@ -272,7 +272,7 @@ font-family: "Open Sans", sans-serif;
 }
 /*------------------------------------------------------------------------ Footer*/
 footer{
-    height: 110px;
+    height: 130px;
     background-color: #000000;
     color: #fafafa;
     font-family: "Open Sans", sans-serif;
