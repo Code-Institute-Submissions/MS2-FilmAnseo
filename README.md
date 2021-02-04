@@ -111,7 +111,7 @@ Thinking about a second iteration, the following features would be nice to have:
     * Allowing the page to load without empty sections before any marker is clicked. This was achieved using display:none which is overridden by jQuery when a user clicks a marker or other interactive page element.
     * Interactivity (together with jQuery) - for example, switching the class of a div to change the background image.
 
-* JavaScript
+* JavaScript and jQuery
     * The main interactive functionality of the site is achieved using JS. Functions are used to manipulate and display data returned by APIs, play audio, send emails.
     * The jQuery library is used to achive interactivity on user actions, for example by toggling the display of additional information.
     * jQuery is also used to aid in selecting DOM elements and change their appearance or content.
@@ -153,22 +153,33 @@ Main resources for making this functional:
 
 
 ## Additional Resources (UI):
-[Font Awesome](https://fontawesome.com/) is used for icons
-[Google Fonts](https://fonts.google.com/) is used for fonts
-[TinyJPG](https://tinyjpg.com/) is used for image compression
+* [Font Awesome](https://fontawesome.com/) is used for icons
+* [Google Fonts](https://fonts.google.com/) is used for fonts
+* [TinyJPG](https://tinyjpg.com/) is used for image compression
+* [Unsplash](https://unsplash.com/) is used a source of imagery
 
 
 ## Testing Resources
-JavaScript validated using [JSHint](https://jshint.com/about/)
-HTML validated using the [W3C markup validation service](https://validator.w3.org/)
-CSS validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
+* JavaScript validated using [JSHint](https://jshint.com/about/)
+* HTML validated using the [W3C markup validation service](https://validator.w3.org/)
+* CSS validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
 
 Responsiveness tested/checked using: 
 * [Responsinator](https://www.responsinator.com/)
 * [Google mobile friendly test](https://search.google.com/test/mobile-friendly)
 
+For results of manual testing see [Testing](testing/testing.md)
+
 Accessibility
 * https://www.webaccessibility.com/
+
+Functionality tested on various device/browser combinations, for example:
+* Chrome on Android, Moto G7
+* Safari on iPad
+* Firefox on Mac (Mojave)
+* Safari on iPhone
+* Chrome on Dell (Linux)
+* Opera on Dell (Linux)
 
 
 ## Main Issues Overcome

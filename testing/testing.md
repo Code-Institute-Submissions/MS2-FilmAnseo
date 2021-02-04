@@ -1,5 +1,5 @@
 ## Testing User Stories 
-The main criteria for used for testing the overall fuctinality of the site are the user stories. A quick not on whether the criteria are met for each user story follows:
+The main criteria for used for testing the overall fuctinality of the site are the user stories. A quick note on whether the criteria are met for each user story follows:
 * I am among a group of tourists sitting at a cafe table after lunch wondering where we'll go for the afternoon. After finding the site, we can easily view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
     * I think the criteria for this user story are met. The film and weather data is working and accessibly presented. Points for improvement might be:
         * A longer list of films
@@ -9,8 +9,8 @@ The main criteria for used for testing the overall fuctinality of the site are t
 * As a first-time user of the site, the information required to use the map and understand what is being presented is clearly accessible.
     * The How To Use The Map section is clearly visible on the page when a user arrives on the site. The information there is clear and at the same time can be easily hidden once the user no longer requires it. Once hidden, the information does not continue to negatively impact user experience.
     * The weather icon is clearly visible and the presence of additional info is clearly demonstrated by use of color (toggle) and cursor change.
-    * The weather info itself is clealry laid out and easy to consume.
-    * Likewise, the presence of additional movie info is clealry illustrated by text (Show More), color toggle, and cursor change.
+    * The weather info itself is clearly laid out and easy to consume.
+    * Likewise, the presence of additional movie info is illustrated by text (Show More), color toggle, and cursor change.
 
 * As a repeat user of the site, I do not need to consult the directions of how to interact with the site. The information that is acessible for a first-time user does not impinge on my use of the map - ie the info can easily be ignored.
     * As a return visitor, I fond the site layout to be clean and any instructional info is hidden. The map is the central focus.
@@ -22,17 +22,11 @@ The main criteria for used for testing the overall fuctinality of the site are t
 * As an administrator at a local tourist office, I can easily get in touch with the site curator to highlight a movie made in the vicinity, thus adding to the list of local tourist attractions.
     * The Contact area of the site is easily accessible by scrolling or by using the navigation option. The form itself offers scope to give information relevant to a film or to add a free text message with additional info, a corrections etc. The form gives user feedback if required elements are not provided or not provided in a valid format (eg email). Similarly, the form gives user feedback (alert, must be confirmed) on successsful submisison of the message and then clears the form for a clean user experience.  
 
-## Manual test for overlapping locations
-The Cliffs of Moher had 2 films listed. Using the same location details for both meant that only one marker displayed.
-Resolution - move one marker slightly.
-
-Console
-
 
 ## JSHint
 JSHint is used to validate the JS code.
 
-Several warnings were found.
+Several warnings were found during testing:
 
 #### Unused Variable in audio.js (Function Name)
 JSHint says that a function is an unused variable. I have looked into this and find there to be no error, so leaving as is:
@@ -53,7 +47,6 @@ It reports '$' to be an undefined variable on the following line:
 ```Javascript
 $('#optional-movie-details').on('click', '#toggle-bar', function () {
 ```
-
 As above, I have looked into these JSHint warnings and found there to be no issue.
 
 
@@ -78,14 +71,25 @@ After adding this line, wrnings disappear. For more, see discussion on CI Slack.
 
 ## CSS
 CSS was validated periodically at https://jigsaw.w3.org/css-validator/validator and all reported errors checked and resolved. For example, the line for padding-right below returned "Value Error : padding-right Too many values or values are not recognized : 0 10px 0"
-Resolved by changing 'padding-right' to 'padding'.
+Resolved by changing 'padding-right' to 'padding' and including 'px'.
 As of Jan 27, only warnings in relation to uploaded style sheets are present and these have been ignored, for example: "Imported style sheets are not checked in direct input and file upload modes"
 
 ## HTML
 There is only one HTML page for this site. As for the CSS, it has been periodically validated. 
 Validation tool: Direct input at https://validator.w3.org/#validate_by_input
-As of Jan 27, one warning repeated 4 times remains:
+As of Jan 27, one warning repeated 4 times remained:
 "The type attribute is unnecessary for JavaScript resources."
+
+After lookinginto this, it seems not to be a big issue: "Up until html5 type was needed for the browser to distinguish between js and other text. With html5 it is no longer needed." [Source](https://www.webmasterworld.com/javascript/4879097.htm)
+Also checked some discussion here and here.
+To adhere with the W#c guidelines, the type attribute has been removed.
+
+#### Error related to block and inline elements
+A late error was found relating to "Error: No p element in scope but a p end tag seen."
+This looks to be due to invalid HTML as a result of nesting a block-level element inside an inline element and was resolved by changing <p> to <div> in this case.
+Resources:
+* https://www.w3.org/TR/html401/struct/global.html#block-inline
+* https://stackoverflow.com/questions/21084870/no-p-element-in-scope-but-a-p-end-tag-seen-w3c-validation 
 
 ## Console Errors
 Checking the console for errors initially revealed the following:
@@ -135,4 +139,6 @@ The process for this was manual testing.
 
 Issue found:
 
-When the details for a location/movie are shown and the user then clicks another location, the trailer does not update if no trailer key is found in the response from the TMDB API for the second movie. That is, the trailer for the previous movie selected is still shown. After figuring out that the issue here was not a problem with the API itself but rather with the data maintained for a movie, the obvious solution was to contribute the missing data to TMDB. This was not required for any mainstream movies but Man of Aran and The Silver Branch were both wwithout any video content on the TMDB API until it was added by providing relevant youtube links. 
+When the details for a location/movie are shown and the user then clicks another location, the trailer does not update if no trailer key is found in the response from the TMDB API for the second movie. That is, the trailer for the previous movie selected is still shown. After figuring out that the issue here was not a problem with the API itself but rather with the data maintained for a movie, the obvious solution was to contribute the missing data to TMDB. This was not required for any mainstream movies but Man of Aran and The Silver Branch were both without any video content on the TMDB API until it was added by providing relevant youtube links. 
+
+## Errors Anticipated
