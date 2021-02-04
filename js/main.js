@@ -387,16 +387,16 @@ $("body").on('click', '#weather-icon', function () {
     $("#weather-details").toggle(800);
 });
 $("#weather-icon").mouseover(function () {
-    $("#weather-icon").css("background-color", "#AFBE8F");
+    $("#weather-icon").css("background-color", "#e0c963");
 });
 $("#weather-icon").mouseout(function () {
-    $("#weather-icon").css("background-color", "#7D8570");
+    $("#weather-icon").css("background-color", "#AFBE8F");
 });
 $("#optional-movie-details").on('mouseover', '#toggle-bar', function () {
-    $("#toggle-bar").css("background-color", "#AFBE8F");
+    $("#toggle-bar").css("background-color", "#e0c963");
 });
 $("#optional-movie-details").on('mouseout', '#toggle-bar', function () {
-    $("#toggle-bar").css("background-color", "#7D8570");
+    $("#toggle-bar").css("background-color", "#AFBE8F");
 });
 $("#filmanseo-form").submit(function () {
     alert("Your message was sent. Thanks for getting in touch.");
