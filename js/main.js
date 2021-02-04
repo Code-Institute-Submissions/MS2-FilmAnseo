@@ -7,7 +7,6 @@ let OMDBUrl;
 let youtubeTrailerId;
 let weatherCoords;
 
-
 //Marker list for movies (to go inside the init map function):
 let markers = [
     {
@@ -16,7 +15,7 @@ let markers = [
                     <p>Rathcabbin and other midland locations</p>
                     `,
         id: "tt0878674",
-        lat: "53.1171605", 
+        lat: "53.1171605",
         lng: "-8.0269183"
 
     },
@@ -167,7 +166,7 @@ let markers = [
                     `,
         id: "tt0045061"
     },
-     {
+    {
         coords: { lat: 51.9457143, lng: -9.1714211 },
         content: `<h3>The Wind That Shakes The Barley</h3>
                     <p>Ballyvourney and around</p>
@@ -185,11 +184,10 @@ function initMap() {
         mapTypeId: google.maps.MapTypeId.TERRAIN //Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
     };
 
-
     let map = new google.maps.Map(document.getElementById("map"), options);
 
     //Loop through to get info for all markers and run addMarker function for each one  
-    for (i = 0; i < markers.length; i++) {    
+    for (i = 0; i < markers.length; i++) {
         addMarker(markers[i]);
     }
     //Add marker
@@ -209,25 +207,18 @@ function initMap() {
             loadMovieDetails();
         });
     }
-
 }
 //Get movie details from OMDB API and call functions to populate HTML
 function loadMovieDetails() {
     google.maps.event.addListener(activeInfoWindow, 'domready', function () {
-        //console.log(activeInfoWindow.anchor.movieId);
         let idForSearch = activeInfoWindow.anchor.movieId;
-        //let weatherCoords = activeInfoWindow.position;
         let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
-        let jsonData;
-        //console.log(idForSearch);
-        //console.log(OMDBUrl);
+        //let jsonData;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let data = this.responseText;
                 let jsonData = JSON.parse(data);
-                // let movieArray = Object.entries(jsonData);
-                //console.log(movieArray);
                 console.log(jsonData);
                 buildOutTable(jsonData);
                 buildOutPosterDiv(jsonData);
@@ -237,50 +228,49 @@ function loadMovieDetails() {
         };
         xhttp.open("GET", OMDBUrl, true);
         xhttp.send();
-
     });
 }
 
 //Use the coords of the selected location to get today's weather for that spot
-function buildOutWeatherDiv(weatherCoords){
+function buildOutWeatherDiv(weatherCoords) {
     let weatherLat = weatherCoords.lat;
     let weatherLon = weatherCoords.lng;
     let weatherSearch = `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherLat}&lon=${weatherLon}&exclude=daily,minutely&appid=4f9b430d616685ff2fd726e57ca8e071&units=metric`;
-                let xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        let weatherInfo = this.responseText;
-                        let jsonWeather = JSON.parse(weatherInfo);
-                        console.log(jsonWeather);
-                        displayWeatherInfo(jsonWeather);
-                    }
-                };
-                xhttp.open("GET", weatherSearch, true);
-                    xhttp.send();
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let weatherInfo = this.responseText;
+            let jsonWeather = JSON.parse(weatherInfo);
+            console.log(jsonWeather);
+            displayWeatherInfo(jsonWeather);
+        }
+    };
+    xhttp.open("GET", weatherSearch, true);
+    xhttp.send();
 }
 
-function displayWeatherInfo(weatherInfo){
-    let weatherIcon=weatherInfo.current.weather[0].icon;
-    let weatherDescription=weatherInfo.current.weather[0].description;
+function displayWeatherInfo(weatherInfo) {
+    let weatherIcon = weatherInfo.current.weather[0].icon;
+    let weatherDescription = weatherInfo.current.weather[0].description;
     //Use parseInt to return a number and ensure no long string of decimals (found in testing)
-    let rainChance={
-        hour1:parseInt(weatherInfo.hourly[0].pop*100),
-        hour2:parseInt(weatherInfo.hourly[1].pop*100),
-        hour3:parseInt(weatherInfo.hourly[2].pop*100),
-        hour4:parseInt(weatherInfo.hourly[3].pop*100),
-        hour5:parseInt(weatherInfo.hourly[4].pop*100),
-        hour6:parseInt(weatherInfo.hourly[5].pop*100),
+    let rainChance = {
+        hour1: parseInt(weatherInfo.hourly[0].pop * 100),
+        hour2: parseInt(weatherInfo.hourly[1].pop * 100),
+        hour3: parseInt(weatherInfo.hourly[2].pop * 100),
+        hour4: parseInt(weatherInfo.hourly[3].pop * 100),
+        hour5: parseInt(weatherInfo.hourly[4].pop * 100),
+        hour6: parseInt(weatherInfo.hourly[5].pop * 100),
     };
     let tempNow = weatherInfo.current.temp;
     let tempNowShow = tempNow.toFixed();
     let tempFeelsLike = weatherInfo.current.feels_like;
     let tempFeelsLikeShow = tempFeelsLike.toFixed();
     document.getElementById("weather-icon").innerHTML =
-`
+        `
 <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="Icon for today's weather"/>
 `;
-document.getElementById("weather-details").innerHTML =
-`
+    document.getElementById("weather-details").innerHTML =
+        `
 <p>Weather today at this location: ${weatherDescription}</p>
 <p>Temperature: ${tempNowShow}<span>&#8451;</span></p>   
 <p>Feels like: ${tempFeelsLikeShow}<span>&#8451;</span></p>
@@ -303,7 +293,7 @@ function buildOutTable(movie) {
             <td>${movie.Plot}</td>
         </tr>
         </table>`;
-    document.getElementById("optional-movie-details").innerHTML =    
+    document.getElementById("optional-movie-details").innerHTML =
         `<div id="optional-rows"><table class="table table-optional" >
         <tr>
             <td>Released</td>
@@ -317,7 +307,6 @@ function buildOutTable(movie) {
             <td>Director</td>
             <td>${movie.Director}</td>
         </tr>
-        
         <tr>
             <td>Runtime</td>
             <td>${movie.Runtime}</td>
@@ -330,22 +319,18 @@ function buildOutTable(movie) {
             <td>Starring</td>
             <td>${movie.Actors}</td>
         </tr>
-
         <tr>
             <td>Awards</td>
             <td>${movie.Awards}</td>
         </tr>
-
         <tr>
             <td>Production Company</td>
             <td>${movie.Production}</td>
         </tr>
-
         <tr>
             <td>Box Office</td>
             <td>${movie.BoxOffice}</td>
         </tr>
-
         <tr>
             <td>IMDb Rating</td>
             <td>${movie.imdbRating}</td>
@@ -364,60 +349,56 @@ function buildOutPosterDiv(movie) {
 
 // Use the movie details returned by loadMovieDetails() to get the youtube url for trailer (uses TMDB API)
 function buildOutTrailerDiv(SearchID) {
-                
-                let trailerSearch = `https://api.themoviedb.org/3/movie/${SearchID}/videos?api_key=cc7f7add0a01568599af8799c924f016`;
-                let xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        let trailerInfo = this.responseText;
-                        let jsonTrailer = JSON.parse(trailerInfo);
-                        //console.log(jsonTrailer.results[0].key);
-                        youtubeTrailerId = jsonTrailer.results[0].key;
-                        displayTrailer(youtubeTrailerId);
-                    }
-                };
-                xhttp.open("GET", trailerSearch, true);
-                    xhttp.send();
-            }
+
+    let trailerSearch = `https://api.themoviedb.org/3/movie/${SearchID}/videos?api_key=cc7f7add0a01568599af8799c924f016`;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let trailerInfo = this.responseText;
+            let jsonTrailer = JSON.parse(trailerInfo);
+            //console.log(jsonTrailer.results[0].key);
+            youtubeTrailerId = jsonTrailer.results[0].key;
+            displayTrailer(youtubeTrailerId);
+        }
+    };
+    xhttp.open("GET", trailerSearch, true);
+    xhttp.send();
+}
 
 // Use the url from buildOut TrailerDiv() to display the trailer
-function displayTrailer(youtube){
-    console.log(youtube);            
+function displayTrailer(youtube) {
+    console.log(youtube);
     document.getElementById("movie-trailer").innerHTML =
-                    `<div class="embed-responsive embed-responsive-16by9">
+        `<div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${youtube}"  allowfullscreen></iframe>
                     </div>`;
-            }
-
-
-// jQuery 
-
+}
+// ---------------------------------------------------------------------- jQuery 
 $('#optional-movie-details').on('click', '#toggle-bar', function () {
-     $("#optional-rows").toggle(800);
+    $("#optional-rows").toggle(800);
 });
-$("body").on('click', '#info-option-bar', function(){
+$("body").on('click', '#info-option-bar', function () {
     $('#how-it-works').toggle(800);
     $('#intro').toggle(800);
     $('#image-header').toggleClass('image-header2');
-    $('#your-responsibility-text').toggle(800);                 
+    $('#your-responsibility-text').toggle(800);
 });
-$("body").on('click', '#weather-icon', function(){
+$("body").on('click', '#weather-icon', function () {
     $("#weather-details").toggle(800);
 });
-$("#weather-icon").mouseover(function(){
+$("#weather-icon").mouseover(function () {
     $("#weather-icon").css("background-color", "#AFBE8F");
-  });
-$("#weather-icon").mouseout(function(){
+});
+$("#weather-icon").mouseout(function () {
     $("#weather-icon").css("background-color", "#7D8570");
-  });
-$("#optional-movie-details").on('mouseover', '#toggle-bar', function(){
+});
+$("#optional-movie-details").on('mouseover', '#toggle-bar', function () {
     $("#toggle-bar").css("background-color", "#AFBE8F");
-  });
-$("#optional-movie-details").on ('mouseout', '#toggle-bar', function(){
+});
+$("#optional-movie-details").on('mouseout', '#toggle-bar', function () {
     $("#toggle-bar").css("background-color", "#7D8570");
-  });
-  $("#filmanseo-form").submit(function(){
+});
+$("#filmanseo-form").submit(function () {
     alert("Your message was sent. Thanks for getting in touch.");
-  });
+});
 
-  
