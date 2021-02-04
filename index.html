@@ -10,7 +10,6 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="icon" type="image/png" href="images/map-marker-icon.png">
-
     <title>Film Anseo</title>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
     </script>
@@ -24,6 +23,7 @@
 
 <body>
     <div class="wrapper">
+        <!--Navigation ------------------ Source: Bootstrap-->
         <nav class="navbar navbar-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleFANav">
                 <span><i class="fas fa-bars"></i></span>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
         </nav>
-
+        <!--Intro Section-->
         <div id="image-header" class="image-header1"></div>
         <div id="intro">
             <blockquote class="quote-line1" cite="https://www.imdb.com/title/tt4714568/?ref_=tt_ch">There are two things
@@ -52,27 +52,29 @@
             <h4>How to use the map</h4>
             <p id="your-responsibility-text">(someone dumb enough to go with you is your responsibility)</p>
         </div>
+        <!--How it Works Section - see main.js for the interaction-->
         <div id="how-it-works">
             <p>The map shows locations in Ireland where famous or award-winning films have been shot - </p>
             <p>or at least had some scenes shot!</p><br />
             <p>To get started, click a marker to get the movie name and basic location info.</p>
             <p>Click the weather icon to see more weather info for the selected location today.</p>
             <p>For movie info, scroll down to see more details or watch the trailer.</p><br />
-
             <p>Maybe it helps you plan a movie-lovers day out!</p><br />
         </div>
+        <!--Map-->
         <div id="map">
         </div>
+        <!--Weather and Movie Details - see main.js for the HTML-->
         <div id="weather-icon"></div>
         <div id="weather-details"></div>
         <div id="movie-details">
         </div>
         <div id="optional-movie-details"></div>
-
         <div id="movie-poster">
         </div>
         <div id="movie-trailer">
         </div>
+        <!--Contact Form ----- Main Source: Bootstrap -->
         <div id="contact-form">
             <form id="filmanseo-form" onsubmit="return sendMail(this);" class="form-group">
                 <h5>Want to add a film to the map?</h5>
@@ -94,16 +96,17 @@
                 <input class="send-button" type="submit" value="Send my message" title="Send us your message" />
             </form>
         </div>
+        <!--About and Acknowledgements-->
         <div id="api-ack">
             <h5>About</h5>
             <div>
-            <aside id="anseo-translate">
-                <p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio-icon"
-                        class="fas fa-volume-up" onclick="playAudio()"></i></p><audio id="anseo-audio">
-                    <source src="audio/anseo-pron.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </aside>
+                <aside id="anseo-translate">
+                    <p><span>anseo</span> (Irish) Adv. Meaning: here, in this place<i id="anseo-audio-icon"
+                            class="fas fa-volume-up" onclick="playAudio()"></i></p><audio id="anseo-audio">
+                        <source src="audio/anseo-pron.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </aside>
             </div>
             <p>The Film Anseo site is developed for educational purposes only. Location information is approximate and
                 users are responsible for their own safety in any travel undertaken based on information contained in
@@ -121,10 +124,9 @@
                     <div class="col xs-6 logo"><img src="images/tmdb-icon.svg" alt="Logo for TMDB API"></div>
                     <div class="col xs-6 logo"><img src="images/google-logo.svg" alt="Logo for Google maps"></div>
                 </div>
-
-
             </div>
         </div>
+        <!--Footer Section-->
         <footer>
             <small>Hero image of the Skelligs, courtesy
                 <a href="https://unsplash.com/photos/Fnp3Y3M0wkA" target="_blank">Mark de Jong on
@@ -134,7 +136,6 @@
                     src="images/github-logo-32px.png" alt="GitHub logo"></a>
         </footer>
     </div>
-
     <!-- JS -->
     <script src="js/main.js"></script>
     <script src="js/audio.js"></script>
