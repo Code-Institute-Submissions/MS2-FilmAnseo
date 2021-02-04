@@ -172,6 +172,12 @@ cursor: pointer;
     width: 100%;
     padding: 0px 10px 0px;
 }
+/*------------------------------------------------------------------------ Trailer Base*/
+.trailer-base{
+    height: 30px;
+    width: 100%;
+    background-color: #ffffff;
+}
 /*------------------------------------------------------------------------ Details table*/
 .table{
     margin-bottom: 0px;
@@ -249,6 +255,7 @@ font-family: "Open Sans", sans-serif;
     margin-left: auto;
     margin-right: auto;
     color: black;
+    border-top: #e0c963 1px solid;
 }
 #contact-form h5{
     font-family: "Bangers", sans-serif; 
