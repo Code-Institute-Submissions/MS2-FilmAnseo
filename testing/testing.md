@@ -1,3 +1,7 @@
+# Testing Film Anseo
+
+## Manual Testing
+
 Functionality tested on various device/browser combinations, for example:
 * Chrome on Android, Moto G7
 * Safari on iPad
@@ -5,6 +9,8 @@ Functionality tested on various device/browser combinations, for example:
 * Safari on iPhone
 * Chrome on Dell (Linux)
 * Opera on Dell (Linux)
+
+The reults of these tests are described below. 
 
 ## Testing User Stories 
 The main criteria for used for testing the overall fuctinality of the site are the user stories. A quick note on whether the criteria are met for each user story follows:
@@ -102,6 +108,7 @@ Resources:
 ## Console Errors
 Checking the console for errors initially revealed the following:
 ![Missing Favicon](../images/readme/missing-favicon.png)
+
 Some research showed this to be coming from a missing favicon. It was resolved by adding the following code to the head of index.html:
 ```HTML
 <link rel="icon" 
@@ -168,6 +175,12 @@ audio.js | [JSHint](https://jshint.com/) | One unused variable (playAudio, not a
 Responsiveness tested/checked using: 
 * [Responsinator](https://www.responsinator.com/)
 * [Google mobile friendly test](https://search.google.com/test/mobile-friendly)
+
+## Anticipated Issues
+There are several areas where improvements could be made in relation to potential errors. For example, currently, if no data is returned from the Weather API, the weather section simply doesn't appear, but some messaging in this instance mifght be helpful.
+
+Likewise, due to time constrints, I have only included the audio file in one format (mp3). This may cause an issue with some browsers. It would be good to include additional formats (ogg) but in the meantime at least, there is a message to tell the user 'Your browser does not support the audio element.' (Thanks to: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) )
+
 
 
 

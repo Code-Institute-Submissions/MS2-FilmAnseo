@@ -1,4 +1,4 @@
-#MS2 - Film Anseo
+# MS2 - Film Anseo
 
 Live site: [Film Anseo](https://workingedge.github.io/MS2-FilmAnseo/)
 
@@ -39,7 +39,7 @@ In relation to finding color threads to follow from images, the following site w
 ### Typography
 There are two aims for the typography on the site:
 * Add to the sense of adventure/holidays/non-serious nature of the content
-* Allow quick and easy reading of test details.
+* Allow quick and easy reading of text details.
 
 To achieve this, the main section headers and page title use the font [Bangers](https://fonts.google.com/specimen/Bangers?preview.text_type=custom#glyphs) - based on "the style of mid-20th century superhero comics".
 In contrast, the detail text used on the site uses [Open Sans](https://fonts.google.com/specimen/Open+Sans?preview.text_type=custom#about) with a "neutral, yet friendly appearance".
@@ -60,7 +60,7 @@ The map functionality is provided by the Google Maps JavaScript API.
 The map uses the familiar default Google markers but displays the 'terrain' view - deempahsizing roads and everyday locations to allow the focus to be on the landscape and the imaginative world of film.
 When clicked, the map markers open an infowindow displaying only the film title and the name of the location. The rest of the film data is displayed dynamically in the main body of the page.
 
-#### Weather Info
+### Weather Info
 Because the user of the map may be thinking about a trip to a location featured on the map, adding weather info for the selected location means they don't need to leave the app to check that.
 The weather data section initially shows an icon only. By tapping or clicking the icon, the user is shown more detailed info:
 * Quick description of weather conditions 
@@ -71,17 +71,17 @@ Although this information might be important for the user, it should be easy to 
 
 The weather data comes from the [Open Weather API](https://openweathermap.org/api) and the same lat and lng coordinates as are used to place the markers are used to make a call to the API. To be as useful as possible for a user, the weather data displayed is specific to each film location, not a general forecast for Ireland.
 
-#### Film Info
+### Film Info
 By default, the textual data for a selected film is limited to just just the title and the plot. The user can choose to show or hide the remaining data (director, actors, awards etc).
 
 Below that, a promotional poster for the film gives a further sense of the time period (1950s or 2010s), and genre.
 
 
-#### Film trailer
+### Film trailer
 A trailer or some other promotional clip is an important aspect of the iformation about any film and this is shown as the third segment of the film data - after the table and the poster. The trailer container is set to be reponsive and will therefore allow a user to view the trailer at a reasonable size regardless of device.
 
 
-#### Contact Form
+### Contact Form
 The list of film on the map is obviously incomplete. The contact form gives the option to users to provide information about movies that are not already on the map or to provide any other feedback or otherwise get in touch.
 The design of the form is very simple and designed to be straighforward for a user even if they don't speak English as a their first language. Also, in an effort to be allow the user to breathe (figuratively) and not feel constricted as they make a connection, the form is well spaced out and has minimal styling.
 
@@ -91,6 +91,10 @@ To ensure intended communication with the site is not lost, the form gives feedb
 
 ![Email sent from contact form](/images/readme/emailjs-result.png)
 
+### Audio Clip for Irish Pronunciation
+Toursits are one of the target audiences of the site. They (as well as many Irish people) will not be familiar with the meaning or pronunciation of the word 'anseo'. If the meaning is not already clear from the various site elements and the How to Use the Map instructions, a translation of *anseo* and an audio clip with its pronunciation is included in the About section of the page. 
+
+### Sub-Features
 #### Hero Image
 The site features a hero image of the Irish coastal landscape that reflects several of the site's underlying design decisions - 
 * It is not tied to any specific place/time and 
@@ -100,11 +104,9 @@ The site features a hero image of the Irish coastal landscape that reflects seve
 #### Fun Call to Action 
 The call to action is presented in the map instructions. The poetic,misty cinematic image of the Skelligs (islands) switches abruptly to the more mischievous and energising image and quote from [The Young Offenders](https://www.theyoungoffenders.com/). The quote lends a further sense of adventure and whimsical mischief to the site and helps it to be a fun engagement by itself, without any follow-on action.
 
-### Navigation and logo
+#### Navigation and logo
 The site has a navigation bar that includes a hamburger icon (links to the contact form and about sections of the page). It also contains the site title and an icon (marker) that immediately helps to explain the site purpose.
 
-### Audio Clip for Irish Pronunciation
-Toursits are one of the target audiences of the site. They (as well as many Irish people) will not be familiar with the meaning or pronunciation of the word 'anseo'. If the meaning is not already clear from the various site elements and the How to Use the Map instructions, a translation of *anseo* and an audio clip with its pronunciation is included in the About section of the page. 
 
 ## Features to Implement in the Future
 Thinking about a second iteration, the following features would be nice to have: 
@@ -173,6 +175,7 @@ Main resources for making this functional:
 * [GitHub](https://github.com) is used to sore the project files and host the live site (GitHub Pages)
 * [GitPod](https://www.gitpod.io/) is the IDE used.
 * [Audacity](https://www.audacityteam.org/) was used to create the audio file.
+* [IconArchive](https://iconarchive.com/show/small-n-flat-icons-by-paomedia/map-marker-icon.html) was used as source of the favicon.
 
 
 ## Testing
@@ -297,6 +300,38 @@ Initial testing of the form showed it to be working but not giving any indicatio
 
 Resources:
 [Stack Overflow for Show Alert](https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted)
+
+## Deployment
+The site is deployed using [GitHub Pages](https://pages.github.com/). 
+
+I deployed to GitHub Pages as follows:
+1. On GitHub, in the project repository, choose *Settings*.
+2. Verify the repo name and go to the *GitHub Pages* section.
+3. Enter the details where required, in this case:
+* Branch is master and the directory is the default top level (root).
+* Theme: None, custom domain: none
+* HTTPS is enforced by default. 
+4. After a couple of minutes the site is available online.
+
+To run a copy of the site locally, [download a zip file](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github#:~:text=To%20simply%20download%20a%20repository,file%20of%20the%20whole%20lot.&text=It%20then%20gives%20you%20a%20zip%20file%20to%20download.) of the repository contents or [clone](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository) the repository and run that in your IDE or local machine.
+
+Once deployed, all testing was done on the live site at: https://workingedge.github.io/MS2-FilmAnseo/
+
+## Credits 
+
+The following youtube tutorials were foundational for this project:
+
+[Brad traversy - Google Maps Javascript API](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=5s&ab_channel=TraversyMedia)
+[LearnWebCode - Template Literals/JSON to HTML Tutorial](https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s)
+
+My mentor Antonio gave really good advice and took time to work through questions on improving the code.
+
+The corresponding sections of the course material were very helpful in thinking about how to overcome issues - for example, displaying temperatue as an integer or make HTTPRequests.
+
+#### Acknowledgements
+The main site image is from [Mark de Jong on Unsplash](https://unsplash.com/photos/Fnp3Y3M0wkA)
+
+Over the course of development, there were too many resources consulted to mention them all. The main ones that provided useful, clear answers or clearly explained code solutions are mentioned together with the corresponding issues in the Issues Overcome section above.
 
 
 
