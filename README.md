@@ -21,7 +21,7 @@ The direction of travel on the site is map -> movie, not the other way around (t
 * As a group of friends spending time together for a weekend and looking for a diversion, the site serves as a source of valuable location-specific weather info and also as a talking point.
 * As an administrator at a local tourist office, I can easily get in touch with the site curator to highlight a movie made in the vicinity, thus adding to the list of local tourist attractions.
 
-
+## Design
 ### Wireframe 
 The [wireframe](wireframes/wireframe.pdf) served as a general guiding principle for the design but was not followed exactly.
 
@@ -35,6 +35,23 @@ The initial color palett was based on the above consideration but it has modifie
 See: [Initial color pallete](/color/palette-for-film-anseo.pdf)
 
 In relation to finding color threads to follow from images, the following site was a useful resource: [ImageColorPicker](https://imagecolorpicker.com/)
+
+### Typography
+There are two aims for the typography on the site:
+* Add to the sense of adventure/holidays/non-serious nature of the content
+* Allow quick and easy reading of test details.
+
+To achieve this, the main section headers and page title use the font [Bangers](https://fonts.google.com/specimen/Bangers?preview.text_type=custom#glyphs) - based on "the style of mid-20th century superhero comics".
+In contrast, the detail text used on the site uses [Open Sans](https://fonts.google.com/specimen/Open+Sans?preview.text_type=custom#about) with a "neutral, yet friendly appearance".
+
+### Imagery
+There are only two static images used on the site but they are very prominent.
+The first serves as an intriguing but vague depiction of a brooding Irish coastal landscape. The aim is to set up the cinematic feel and to be enticing for the user to know more. 
+The second image is a still from a movie featured on the site and together with the colour change and quote in Bangers font, it is meant to kick the users attention further into gear and get them excited to interact with the site.
+
+Note on usage:
+The Young Offenders image is copyright but used here for educational purposes and with 'fair use'.
+The coastal image is freely used under the terms of [Unsplash](https://unsplash.com/license). The photographer is creditied in the site footer and in the Credits section of the ReadMe.
 
 ## Features
 #### Map
@@ -87,7 +104,7 @@ The call to action is presented in the map instructions. The poetic,misty cinema
 The site has a navigation bar that includes a hamburger icon (links to the contact form and about sections of the page). It also contains the site title and an icon (marker) that immediately helps to explain the site purpose.
 
 ### Audio Clip for Irish Pronunciation
-Toursits are one of th target audiences of the site. They (as well as many Irish people) will not be familiar with the meaning or pronunciation of the word 'anseo'. If the meaning is not already clear from the various site elements and the How to Use the Map instructions, a translation of *anseo* and an audio clip with its pronunciation is included in the About section of the page. 
+Toursits are one of the target audiences of the site. They (as well as many Irish people) will not be familiar with the meaning or pronunciation of the word 'anseo'. If the meaning is not already clear from the various site elements and the How to Use the Map instructions, a translation of *anseo* and an audio clip with its pronunciation is included in the About section of the page. 
 
 ## Features to Implement in the Future
 Thinking about a second iteration, the following features would be nice to have: 
@@ -148,34 +165,19 @@ Main resources for making this functional:
     * Weather data presented on the site is supplied by the [Open Weather API](https://openweathermap.org/api)
 
 
-## Additional Resources (UI):
+## Additional Resources:
 * [Font Awesome](https://fontawesome.com/) is used for icons
 * [Google Fonts](https://fonts.google.com/) is used for fonts
 * [TinyJPG](https://tinyjpg.com/) is used for image compression
-* [Unsplash](https://unsplash.com/) is used a source of imagery
+* [Git](https://git-scm.com/) is used for version control
+* [GitHub](https://github.com) is used to sore the project files and host the live site (GitHub Pages)
+* [GitPod](https://www.gitpod.io/) is the IDE used.
+* [Audacity](https://www.audacityteam.org/) was used to create the audio file.
 
 
-## Testing Resources
-* JavaScript validated using [JSHint](https://jshint.com/about/)
-* HTML validated using the [W3C markup validation service](https://validator.w3.org/)
-* CSS validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
-
-Responsiveness tested/checked using: 
-* [Responsinator](https://www.responsinator.com/)
-* [Google mobile friendly test](https://search.google.com/test/mobile-friendly)
+## Testing
 
 For results of manual testing see [Testing](testing/testing.md)
-
-Accessibility
-* https://www.webaccessibility.com/
-
-Functionality tested on various device/browser combinations, for example:
-* Chrome on Android, Moto G7
-* Safari on iPad
-* Firefox on Mac (Mojave)
-* Safari on iPhone
-* Chrome on Dell (Linux)
-* Opera on Dell (Linux)
 
 
 ## Main Issues Overcome
