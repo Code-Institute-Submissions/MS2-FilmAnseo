@@ -100,7 +100,7 @@ To adhere with the W#c guidelines, the type attribute has been removed.
 
 #### Error related to block and inline elements
 A late error was found relating to "Error: No p element in scope but a p end tag seen."
-This looks to be due to invalid HTML as a result of nesting a block-level element inside an inline element and was resolved by changing <p> to <div> in this case.
+This looks to be due to invalid HTML as a result of nesting a block-level element inside an inline element and was resolved by changing a p element to a div element in this case.
 Resources:
 * https://www.w3.org/TR/html401/struct/global.html#block-inline
 * https://stackoverflow.com/questions/21084870/no-p-element-in-scope-but-a-p-end-tag-seen-w3c-validation 
