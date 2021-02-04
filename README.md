@@ -1,10 +1,6 @@
 #MS2 - Film Anseo
 
-*anseo*, adv. Here, in this place. 
-
 Live site: [Film Anseo](https://workingedge.github.io/MS2-FilmAnseo/)
-
-Film Anseo (Film Here) - 
 
 This is my MS2 project - a responsive web app for movie lovers visiting or living in Ireland who may like to visit locations where famous movies have had scenes shot.
 

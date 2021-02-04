@@ -1,3 +1,11 @@
+Functionality tested on various device/browser combinations, for example:
+* Chrome on Android, Moto G7
+* Safari on iPad
+* Firefox on Mac (Mojave)
+* Safari on iPhone
+* Chrome on Dell (Linux)
+* Opera on Dell (Linux)
+
 ## Testing User Stories 
 The main criteria for used for testing the overall fuctinality of the site are the user stories. A quick note on whether the criteria are met for each user story follows:
 * I am among a group of tourists sitting at a cafe table after lunch wondering where we'll go for the afternoon. After finding the site, we can easily view the map, discuss the films, chat about the movie trivia and make a decision on whether or not to go to the location based on weather info.
@@ -141,4 +149,26 @@ Issue found:
 
 When the details for a location/movie are shown and the user then clicks another location, the trailer does not update if no trailer key is found in the response from the TMDB API for the second movie. That is, the trailer for the previous movie selected is still shown. After figuring out that the issue here was not a problem with the API itself but rather with the data maintained for a movie, the obvious solution was to contribute the missing data to TMDB. This was not required for any mainstream movies but Man of Aran and The Silver Branch were both without any video content on the TMDB API until it was added by providing relevant youtube links. 
 
-## Errors Anticipated
+## Testing Resources
+Current testing results: 
+* JavaScript validated using [JSHint](https://jshint.com/about/)
+* HTML validated using the [W3C markup validation service](https://validator.w3.org/)
+* CSS validated using the [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
+
+Results as of Feb 4, 2021:
+File | Tested With | Result
+---- |------------ | ------
+index.html | [W3C](https://validator.w3.org/#validate_by_input) | No errors
+style.css |   [W3C](https://jigsaw.w3.org/css-validator/) | No errors (warning for imported stylesheets only)
+main.js | [JSHint](https://jshint.com/) | Undefined variables (google, $ as dicussed above), 4 unused variables which I have checked and believe to be used or not a variable (initMap).
+sendEmail.js |  [JSHint](https://jshint.com/) | One undefined variable (emailjs, not a variable) and one unused variable (sendMail, not a variable)
+audio.js | [JSHint](https://jshint.com/) | One unused variable (playAudio, not a variable)
+
+## Responsiveness
+Responsiveness tested/checked using: 
+* [Responsinator](https://www.responsinator.com/)
+* [Google mobile friendly test](https://search.google.com/test/mobile-friendly)
+
+
+
+
