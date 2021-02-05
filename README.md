@@ -223,12 +223,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Prop
 https://www.samanthaming.com/tidbits/76-converting-object-to-array/
 
 
-## How to Populate the HTML Cleanly
+### How to Populate the HTML Cleanly
 Because there is quite a bit of data used to populate the HTML divs,the code was initially looking like it would end up being messy and hard to read.
 This was resolved by separating the build-out of the HTML sections to separate functions. The HTML was set up using template literals.
 Excellent resource that served as the base for this approach: https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s
 
-## How to Open map in Terrain Mode by Default
+### How to Open map in Terrain Mode by Default
 The hybrid mode in which the Google map opens by default is not in keeping with the intended look and feel of the site. In terrain mode, the color aligns with the color scheme of the site and it empahsizes the landscape of the country which is more in keeping with the site purpose.
 To open in terrain mode by default, I added the following code to the initmap() function:
 ```JavaScript
@@ -237,7 +237,7 @@ mapTypeId: google.maps.MapTypeId.TERRAIN
 ``` 
 Source: https://stackoverflow.com/questions/8607036/google-maps-v3-terrain-view-by-default
 
-## How to Fix Issue with No Listener for jQuery Selector
+### How to Fix Issue with No Listener for jQuery Selector
 I had an issue whereby the following code did nothing:
 ```JavaScript
 $("#toggle-button").click (function (){
@@ -317,22 +317,25 @@ To run a copy of the site locally, [download a zip file](https://stackoverflow.c
 
 Once deployed, all testing was done on the live site at: https://workingedge.github.io/MS2-FilmAnseo/
 
+## Known Issues
+There is a an error with the responsiveness of the footer on some devices whereby the TMDB icon resizes (down) to a greater extent than its neighbouring icons. 
+
 ## Credits 
 
 The following youtube tutorials were foundational for this project:
 
-[Brad traversy - Google Maps Javascript API](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=5s&ab_channel=TraversyMedia)
-[LearnWebCode - Template Literals/JSON to HTML Tutorial](https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s)
+* [Brad Traversy - Google Maps Javascript API](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=5s&ab_channel=TraversyMedia)
+* [LearnWebCode - Template Literals/JSON to HTML Tutorial](https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s)
 
-My mentor Antonio gave really good advice and took time to work through questions on improving the code.
+* My mentor Antonio gave really good advice and took time to work through questions on improving the code.
 
-The corresponding sections of the course material were very helpful in thinking about how to overcome issues - for example, displaying temperatue as an integer or make HTTPRequests.
+* The corresponding sections of the course material were very helpful in thinking about how to overcome issues - for example, displaying temperatue as an integer or making HTTPRequests.
 
-#### Acknowledgements
-The main site image is from [Mark de Jong on Unsplash](https://unsplash.com/photos/Fnp3Y3M0wkA)
-OpenWeather logo is from https://mebee.info/2019/10/08/post-1670/
-The Google Maps icon is from https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg 
-Resources consulted for film info are included [here](MovieInfo.md).
+## Additional Acknowledgements
+* The main site image is from [Mark de Jong on Unsplash](https://unsplash.com/photos/Fnp3Y3M0wkA)
+* OpenWeather logo is from https://mebee.info/2019/10/08/post-1670/
+* The Google Maps icon is from https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg 
+* Resources consulted for film info are included [here](MovieInfo.md).
 
 Over the course of development, there were too many resources consulted to mention them all. The main ones that provided useful, clear answers or clearly explained code solutions are mentioned together with the corresponding issues in the Issues Overcome section above.
 
