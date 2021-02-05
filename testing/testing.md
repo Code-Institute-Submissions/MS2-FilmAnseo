@@ -126,7 +126,7 @@ Currently, console is showing no errors on initial page load or during the user 
 
 ## Testing Contact Form Functionality
 It took me a little bit of time to get the contact form working as I wanted but trial and error and lots of test messages later, it is working as intended. Functionality has been tested on several broswers on mobile and desktop device.
-See Issues Overcome in main README for details on the issue of form refresh.
+
 
 ## Testing the Map Functionality
 An issue found early on when testing the map was that when clicking a second or third marker, the information displayed was a repeat of the output for previous marker clicked. Essentially, there wasn't a clean break between one marker click and the next. 
