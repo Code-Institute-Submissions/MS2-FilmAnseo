@@ -281,7 +281,7 @@ parseInt() - https://www.w3schools.com/jsref/jsref_parseint.asp#:~:text=The%20pa
 Thesed were also covered in teh course content so were not completely new.
 
 ### How to Show Degrees C Symbol
-Instead of writin 'degrees C", I wanted to use the degree symbol, found here:
+Instead of displaying 'degrees C", I wanted to use the degree symbol, found here:
 https://www.toptal.com/designers/htmlarrows/symbols/degree-celsius/
 
 ### How to Allow for a Responsive Trailer Size Appropriate to the User's Device
@@ -330,20 +330,14 @@ The corresponding sections of the course material were very helpful in thinking 
 
 #### Acknowledgements
 The main site image is from [Mark de Jong on Unsplash](https://unsplash.com/photos/Fnp3Y3M0wkA)
+OpenWeather logo is from https://mebee.info/2019/10/08/post-1670/
+The Google Maps icon is from https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg 
+Resources consulted for film info are included [here](MovieInfo.md).
 
 Over the course of development, there were too many resources consulted to mention them all. The main ones that provided useful, clear answers or clearly explained code solutions are mentioned together with the corresponding issues in the Issues Overcome section above.
 
 
 
-## Other resources:
-* Dot notation (accessing the required data from the weather API): https://www.sitepoint.com/back-to-basics-javascript-object-syntax/
-
-* Google maps icon: https://commons.wikimedia.org/wiki/File:Google_Maps_icon.svg
-
-* OpenWeather logo: https://mebee.info/2019/10/08/post-1670/
-
-* Show alert after form submitted:
-https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted
 
 
 
