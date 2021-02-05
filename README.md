@@ -327,9 +327,9 @@ The following youtube tutorials were foundational for this project:
 * [Brad Traversy - Google Maps Javascript API](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=5s&ab_channel=TraversyMedia)
 * [LearnWebCode - Template Literals/JSON to HTML Tutorial](https://www.youtube.com/watch?v=DG4obitDvUA&t=1818s)
 
-* My mentor Antonio gave really good advice and took time to work through questions on improving the code.
+My mentor Antonio gave really good advice and took time to work through questions on improving the code.
 
-* The corresponding sections of the course material were very helpful in thinking about how to overcome issues - for example, displaying temperatue as an integer or making HTTPRequests.
+The corresponding sections of the course material were very helpful in thinking about how to overcome issues - for example, displaying temperatue as an integer or making HTTPRequests.
 
 ## Additional Acknowledgements
 * The main site image is from [Mark de Jong on Unsplash](https://unsplash.com/photos/Fnp3Y3M0wkA)
@@ -338,6 +338,9 @@ The following youtube tutorials were foundational for this project:
 * Resources consulted for film info are included [here](MovieInfo.md).
 
 Over the course of development, there were too many resources consulted to mention them all. The main ones that provided useful, clear answers or clearly explained code solutions are mentioned together with the corresponding issues in the Issues Overcome section above.
+
+## Disclaimer
+This website is for educational purposes only.
 
 
 
