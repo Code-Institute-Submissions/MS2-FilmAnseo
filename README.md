@@ -2,7 +2,7 @@
 ![Responsive Site](/images/readme/film-anseo-responsive.png)
 Live site: [Film Anseo](https://workingedge.github.io/MS2-FilmAnseo/)
 
-This is my MS2 project - a responsive web app for movie lovers visiting or living in Ireland who may like to visit locations where famous movies have had scenes shot.
+This is my MS2 project - a responsive mobile website for movie lovers visiting or living in Ireland who may like to visit locations where famous movies have had scenes shot.
 
 # Site purpose
 The purpose of the site is to be a quick and easy look into the Irish landscape to see where well-known or loved movies have had scenes shot - irrespective of whether the location served as itself (as in Man of Aran, for example) or as a fictional or even fantastical place (as in Princess Bride or Star Wars). 
@@ -187,7 +187,7 @@ For results of manual testing see [Testing](testing/testing.md)
 
 ### How to Access the ID for the Movie
 The [IMDb](https://www.imdb.com/) ID is the central piece of info to allow the API to return results for a particular movie. My problem was how to link the key for a specific move with a specific marker so that the correct API request was sent for the marker.
-Initially, I included the key as innerHTML in a hidden "<p>" element in the InfoWindow content. However, this seemed like a clumsy approach and was confirmed as such by my mentor (Antonio) who advised providing a property in the marker object to hold this info rather than the HTML. This was an easy fix and once identified I could simply reassign the idForSearch variable:
+Initially, I included the key as innerHTML in a hidden p element in the InfoWindow content. However, this seemed like a clumsy approach and was confirmed as such by my mentor (Antonio) who advised providing a property in the marker object to hold this info rather than the HTML. This was an easy fix and once identified I could simply reassign the idForSearch variable:
 From:
 ```JavaScript
 let idForSearch = document.getElementById("IMDB").innerHTML;
@@ -244,14 +244,13 @@ $("#toggle-button").click (function (){
       $("#optional-rows").toggle(1000);    
 });
 ```
-in researching this, the following were some blind alleys:
+In researching this, the following were some blind alleys:
 * Is the issue with CSS (display: none)? No, seemed like the jQuery show() method should override that.
 * Is it an issue with placement of the jQuery file? Checked - seemed fine.
 * Is it an issue with '$'? Replaced that with 'jQuery', no change.
-Checked jQuery debugging strategy outlined here: https://www.simonbattersby.com/blog/debugging-jquery-a-beginners-guide/
+* Checked jQuery debugging strategy outlined here: https://www.simonbattersby.com/blog/debugging-jquery-a-beginners-guide/
 
-Finally, on this post (https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art044), checking the DOM for an event listener on the selector was mentioned. I did that and found that there was nothing being listened for
-
+Finally, on this post (https://commandlinefanatic.com/cgi-bin/showarticle.cgi?article=art044), checking the DOM for an event listener on the selector was mentioned. I did that and found that there was nothing being listened for.
 Changing to the following code fixed the issue:
 ```javascript
 $('body').on('click', '#toggle-button', function () {
@@ -276,9 +275,9 @@ https://css-tricks.com/best-way-implement-wrapper-css/
 ### How to Manipulate the Weather API Reponse to Show the Data in a User-Friendly Way
 In the weather section of the page, the chance of rain is given as a percentage, but the API gives this as a number between 0 and 1.
 Similarly, the temperature is given as a whole number but the API gives it to two decimal places. To manipulate the display of this data I used the following JS:
-toFixed() - https://www.w3schools.com/jsref/jsref_tofixed.asp
-parseInt() - https://www.w3schools.com/jsref/jsref_parseint.asp#:~:text=The%20parseInt()%20function%20parses,number%20to%20a%20decimal%20number
-Thesed were also covered in teh course content so were not completely new.
+* toFixed() - https://www.w3schools.com/jsref/jsref_tofixed.asp
+* parseInt() - https://www.w3schools.com/jsref/jsref_parseint.asp#:~:text=The%20parseInt()%20function%20parses,number%20to%20a%20decimal%20number
+These were also covered in teh course content so were not completely new.
 
 ### How to Show Degrees C Symbol
 Instead of displaying 'degrees C", I wanted to use the degree symbol, found here:
@@ -291,7 +290,7 @@ This was very straightforward with [Bootstrap](https://getbootstrap.com/docs/4.0
   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
 </div>
 ```
-### How to style the first cell in each row of the table
+### How to Style the First Cell in Each Row of the Table
 This was achieved using CSS first-of-type selector:
 https://www.w3schools.com/cssref/sel_first-of-type.asp
 
@@ -318,7 +317,7 @@ To run a copy of the site locally, [download a zip file](https://stackoverflow.c
 Once deployed, all testing was done on the live site at: https://workingedge.github.io/MS2-FilmAnseo/
 
 ## Known Issues
-There is a an error with the responsiveness of the footer on some devices whereby the TMDB icon resizes (down) to a greater extent than its neighbouring icons. 
+There is a an error with the responsiveness of the footer on some devices/browsers whereby the TMDB icon resizes (down) to a greater extent than its neighbouring icons. Have not had time to fix this before the submission deadline.
 
 ## Credits 
 
