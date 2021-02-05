@@ -32,7 +32,7 @@ Thinking about colours, my main aim was to:
 * Have upbeat colours that add to a sense of fun in the site without feeling childish or undermining the information.
 
 The initial color palett was based on the above consideration but it has modified during the design and testing phases.
-See: [Initial color pallete](/color/palette-for-film-anseo.pdf)
+See: [Initial color palette](/color/palette-for-film-anseo.pdf)
 
 In relation to finding color threads to follow from images, the following site was a useful resource: [ImageColorPicker](https://imagecolorpicker.com/)
 
@@ -217,10 +217,10 @@ For more on the OMDb issue, see: https://github.com/omdbapi/OMDb-API/issues/180
 It took a little bit of time to figure out how to access the various elements of the API responses - see code snippet in preceding section. However, once this fell into place, it suddenly became quite straighforward. A similar process is reqired for accessing the required info from the weather API.
 
 Resources consulted on this:
-https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
-https://medium.com/dailyjs/dot-notation-vs-bracket-notation-eedea5fa8572
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
-https://www.samanthaming.com/tidbits/76-converting-object-to-array/
+* https://stackoverflow.com/questions/11922383/how-can-i-access-and-process-nested-objects-arrays-or-json
+* https://medium.com/dailyjs/dot-notation-vs-bracket-notation-eedea5fa8572
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
+* https://www.samanthaming.com/tidbits/76-converting-object-to-array/
 
 
 ### How to Populate the HTML Cleanly
