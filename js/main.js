@@ -213,7 +213,6 @@ function loadMovieDetails() {
     google.maps.event.addListener(activeInfoWindow, 'domready', function () {
         let idForSearch = activeInfoWindow.anchor.movieId;
         let OMDBUrl = "https://www.omdbapi.com/?i=" + idForSearch + "&apikey=e3028bad";
-        //let jsonData;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
