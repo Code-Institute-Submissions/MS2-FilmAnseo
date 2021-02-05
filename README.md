@@ -296,9 +296,17 @@ https://www.w3schools.com/cssref/sel_first-of-type.asp
 
 ### How to Improve Contact Form Functionality with Confirmation and Reset
 Initial testing of the form showed it to be working but not giving any indication to the user that it was working. This was improved by showing an alert on submit and also resetting/clearing the form.
+The reset was achieved by adding to the sendMail.js file as follows:
+```JavaScript
+.then( 
+         function (){
+           document.getElementById("filmanseo-form").reset(); 
+        })
+```
 
 Resources:
-[Stack Overflow for Show Alert](https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted)
+* [Stack Overflow for Show Alert](https://stackoverflow.com/questions/22294787/show-alert-when-form-submitted)
+* [W3Schools for reset](https://www.w3schools.com/jsref/met_form_reset.asp)
 
 ## Deployment
 The site is deployed using [GitHub Pages](https://pages.github.com/). 
@@ -339,7 +347,7 @@ The corresponding sections of the course material were very helpful in thinking 
 Over the course of development, there were too many resources consulted to mention them all. The main ones that provided useful, clear answers or clearly explained code solutions are mentioned together with the corresponding issues in the Issues Overcome section above.
 
 ## Disclaimer
-This website is for educational purposes only.
+This website is for educational purposes only. All code is my own, based on the various reources mentioned.
 
 
 
